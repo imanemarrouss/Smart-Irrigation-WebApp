@@ -1,68 +1,30 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import Navbar from './Navbar';
+import Header from './Header'; // Assurez-vous d'importer le composant Header
+import TopPicks from './TopPicks'; // Assurez-vous d'importer le composant TopPicks
+import Footer from './Footer'; // Assurez-vous d'importer le composant Footer
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
-
-  const handleGetStarted = () => {
-    navigation.navigate('Login');
+  const styles = {
+    homeContainer: {
+      backgroundColor: '#d7f5e1', // Couleur de fond pour toute la page
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center', // Centrage horizontal des éléments
+      minHeight: '100vh', // S'assure que la page prend au moins toute la hauteur
+      paddingBottom: '20px', // Ajout d'un padding au bas pour espacer les éléments
+      justifyContent: 'space-between', // Espacement entre les éléments
+    },
   };
 
   return (
-    <ImageBackground
-      source={require('../../assets/image1.png')}
-      style={styles.backgroundImage}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Welcome!</Text>
-        <Text style={styles.subtitle}>We warmly welcome you to our app.</Text>
-        <TouchableOpacity style={styles.getStartedButton} onPress={handleGetStarted}>
-          <Text style={styles.buttonText}>Get Started</Text>
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
+    <div style={styles.homeContainer}> 
+      <Navbar />
+      <Header />
+      <TopPicks />
+      <Footer />
+    </div>
   );
 };
-
-const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: 'white',
-    textAlign: 'center',
-  },
-  subtitle: {
-    fontSize: 18,
-    marginBottom: 30,
-    color: 'white',
-    textAlign: 'center',
-  },
-  getStartedButton: {
-    backgroundColor: '#007BFF',
-    width: '100%',
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
 
 export default HomeScreen;

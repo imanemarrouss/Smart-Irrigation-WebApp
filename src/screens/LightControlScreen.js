@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { toggleLED, fetchLightSensorData, activateIrrigation, fetchHumiditySensorData } from '../services/NodeMCUService';
-import Icon from '@material-ui/icons/ArrowBack';
+//import Icon from '@material-ui/icons/ArrowBack';
 
 const LightControlScreen = () => {
     const [ledStatus, setLedStatus] = useState('OFF');
@@ -50,18 +50,19 @@ const LightControlScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Icon style={styles.icon} onClick={() => {/* Implement navigation */}} />
-                <Text style={styles.headerText}>Back to Home</Text>
-            </View>
-            <Image src={require('../utils/plant.png')} style={styles.plantImage} />
-            <TouchableOpacity onClick={handleToggleLED} style={styles.activateButton}>
-                <Text style={styles.activateButtonText}>Toggle LED ({ledStatus})</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onClick={handleActivateIrrigation} style={styles.activateButton}>
-                <Text style={styles.activateButtonText}>Activate Irrigation</Text>
-            </TouchableOpacity>
-        </View>
+    <View style={styles.header}>
+         
+        <Text style={styles.headerText}>Back to Home</Text>
+    </View>
+    <Image src={require('../utils/plant.png')} style={styles.plantImage} />
+    <TouchableOpacity onClick={handleToggleLED} style={styles.activateButton}>
+        <Text style={styles.activateButtonText}>Toggle LED ({ledStatus})</Text>
+    </TouchableOpacity>
+    <TouchableOpacity onClick={handleActivateIrrigation} style={styles.activateButton}>
+        <Text style={styles.activateButtonText}>Activate Irrigation</Text>
+    </TouchableOpacity>
+</View>
+
     );
 };
 

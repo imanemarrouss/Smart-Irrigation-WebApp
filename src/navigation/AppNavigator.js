@@ -23,39 +23,18 @@ import AddPlants from '../screens/AddPlants';
 import { PlantDetails } from '../screens/PlantDetails';
 import { AllPlants } from '../screens/AllPlants';
 import RagChainScreen from '../screens/RagChainScreen';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen name="AddPlants" component={AddPlants} />
-
-      {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
-{/* <Stack.Screen name="Home" component={Home} /> */}
-{/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
-      {/* <Stack.Screen name="AddPlant" component={AddPlants} options={{ title: 'add Plant' }} />
-
-         <Stack.Screen name="AllPlants" component={AllPlants} options={{ title: 'My PLANTS' }} />
-      <Stack.Screen name="Camera" component={CameraView} options={{ title: 'camera' }} />
-     
-      <Stack.Screen name="LightControl" component={LightControlScreen} options={{ title: 'Tableau de Bord' }} />
-      <Stack.Screen name="PlantDetails" component={PlantDetails} />
-        <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Tableau de Bord' }} />
-        
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomeScreen />} />
+      <Route path='/home' element={<HomeScreen/>}></Route>
       
-<Stack.Screen name="AddPlants" component={AddPlants} />
-      {/* <Stack.Screen name="IrrigationHistoryScreen" component={IrrigationHistoryScreen} options={{ title: 'Tableau de Bord' }} /> */}
-
-{/* <Stack.Screen name="RagChain" component={RagChainScreen} options={{ title: 'RAG Chain' }} /> */}
-
-{/* <Stack.Screen name="SensorDataHistory" component={SensorDataHistory} options={{ title: 'Tableau de Bord' }} />  */}
-
-                {/* <Stack.Screen name="LightControl" component={LightControlScreen} options={{ title: 'Tableau de Bord' }} /> */}
-                {/* <Stack.Screen name="Notification" component={Notification} /> */}
-        {/* <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Tableau de Bord' }} /> */}
-      </Stack.Navigator>
-    </NavigationContainer>
+    </Routes>
+    </BrowserRouter>
   );
 };
 
