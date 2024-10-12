@@ -23,15 +23,18 @@ import AddPlants from '../screens/AddPlants';
 import { PlantDetails } from '../screens/PlantDetails';
 import { AllPlants } from '../screens/AllPlants';
 import RagChainScreen from '../screens/RagChainScreen';
+import UserProfile from '../components/Login/UserProfile';
+
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="AddPlants" component={AddPlants} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="UserProfile" component={UserProfile} />
 
-      {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
+      {/* <Stack.Screen name="AddPlants" component={AddPlants} /> */}
 {/* <Stack.Screen name="Home" component={Home} /> */}
 {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       {/* <Stack.Screen name="AddPlant" component={AddPlants} options={{ title: 'add Plant' }} />
