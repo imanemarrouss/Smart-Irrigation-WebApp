@@ -23,7 +23,7 @@ const Navbar = () => {
           <a href="/about" className="hover:text-green-400 transition duration-300 ease-in-out">About Us</a>
         </li>
         <li>
-          <a href="/shop" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</a>
+          <a href="/referentiel" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</a>
         </li>
       </ul>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
             <a href="/about" className="hover:text-green-400 transition duration-300 ease-in-out">About Us</a>
           </li>
           <li>
-            <a href="/shop" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</a>
+            <a href="/referentiel" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</a>
           </li>
           <li>
             <a href="/sign" className="px-6 py-2 bg-green-500 text-white rounded-full font-bold hover:bg-green-400 transition duration-300 ease-in-out">

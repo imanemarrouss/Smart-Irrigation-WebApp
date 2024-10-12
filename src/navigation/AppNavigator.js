@@ -32,7 +32,6 @@ const AppNavigator = () => {
     <Routes>
       <Route path="/" element={<HomeScreen />} />
       <Route path='/home' element={<HomeScreen/>}></Route>
-      
     </Routes>
     </BrowserRouter>
   );
