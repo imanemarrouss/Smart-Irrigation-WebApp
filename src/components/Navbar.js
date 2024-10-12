@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,21 +17,21 @@ const Navbar = () => {
       {/* Menu desktop */}
       <ul className="hidden md:flex space-x-10 text-white font-semibold text-lg">
         <li>
-          <a href="/home" className="hover:text-green-400 transition duration-300 ease-in-out">Home</a>
+          <Link to="/home" className="hover:text-green-400 transition duration-300 ease-in-out">Home</Link>
         </li>
         <li>
-          <a href="/about" className="hover:text-green-400 transition duration-300 ease-in-out">About Us</a>
+          <Link to="/about" className="hover:text-green-400 transition duration-300 ease-in-out">About Us</Link>
         </li>
         <li>
-          <a href="/referentiel" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</a>
+          <Link to="/referentiel" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</Link>
         </li>
       </ul>
 
       {/* Sign Up Button for larger screens */}
       <div className="hidden md:flex">
-        <a href="/sign" className="px-6 py-2 bg-green-500 text-white rounded-full font-bold hover:bg-green-400 transition duration-300 ease-in-out">
+        <Link to="/sign" className="px-6 py-2 bg-green-500 text-white rounded-full font-bold hover:bg-green-400 transition duration-300 ease-in-out">
           Sign Up
-        </a>
+        </Link>
       </div>
 
       {/* Hamburger icon for mobile */}
@@ -47,18 +47,18 @@ const Navbar = () => {
       {isOpen && (
         <ul className="absolute top-16 left-0 w-full bg-gray-900 flex flex-col items-center space-y-4 py-4 text-white font-semibold text-lg">
           <li>
-            <a href="/home" className="hover:text-green-400 transition duration-300 ease-in-out">Home</a>
+            <Link to="/home" className="hover:text-green-400 transition duration-300 ease-in-out">Home</Link>
           </li>
           <li>
-            <a href="/about" className="hover:text-green-400 transition duration-300 ease-in-out">About Us</a>
+            <Link to="/about" className="hover:text-green-400 transition duration-300 ease-in-out">About Us</Link>
           </li>
           <li>
-            <a href="/referentiel" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</a>
+            <Link to="/referentiel" className="hover:text-green-400 transition duration-300 ease-in-out">Référentiel</Link>
           </li>
           <li>
-            <a href="/sign" className="px-6 py-2 bg-green-500 text-white rounded-full font-bold hover:bg-green-400 transition duration-300 ease-in-out">
+            <Link to="/sign" className="px-6 py-2 bg-green-500 text-white rounded-full font-bold hover:bg-green-400 transition duration-300 ease-in-out">
               Sign Up
-            </a>
+            </Link>
           </li>
           
         </ul>
