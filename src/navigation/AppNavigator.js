@@ -24,6 +24,7 @@ import { PlantDetails } from '../screens/PlantDetails';
 import { AllPlants } from '../screens/AllPlants';
 import RagChainScreen from '../screens/RagChainScreen';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AskQuestion from '../components/Rag/AskQuestion';
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -32,6 +33,8 @@ const AppNavigator = () => {
     <Routes>
       <Route path="/" element={<HomeScreen />} />
       <Route path='/home' element={<HomeScreen/>}></Route>
+      <Route path='/referentiel' element={<AskQuestion/>} />
+
     </Routes>
     </BrowserRouter>
   );

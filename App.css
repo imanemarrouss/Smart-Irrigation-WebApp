@@ -15,4 +15,3 @@ html, body {
     height: 100%;           /* Assure que le root occupe toute la hauteur */
     overflow: auto;         /* Permet à la scrollbar d'apparaître si le contenu déborde */
   }
-  

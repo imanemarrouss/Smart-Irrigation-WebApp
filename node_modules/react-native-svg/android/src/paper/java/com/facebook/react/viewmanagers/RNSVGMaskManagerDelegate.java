@@ -99,6 +99,9 @@ public class RNSVGMaskManagerDelegate<T extends View, U extends BaseViewManagerI
       case "propList":
         mViewManager.setPropList(view, (ReadableArray) value);
         break;
+      case "filter":
+        mViewManager.setFilter(view, value == null ? null : (String) value);
+        break;
       case "fontSize":
         mViewManager.setFontSize(view, new DynamicFromObject(value));
         break;
@@ -125,6 +128,9 @@ public class RNSVGMaskManagerDelegate<T extends View, U extends BaseViewManagerI
         break;
       case "maskContentUnits":
         mViewManager.setMaskContentUnits(view, value == null ? 0 : ((Double) value).intValue());
+        break;
+      case "maskType":
+        mViewManager.setMaskType(view, value == null ? 0 : ((Double) value).intValue());
         break;
       default:
         super.setProperty(view, propName, value);
