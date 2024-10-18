@@ -1,0 +1,140 @@
+html, body {
+    height: 100%; /* Ensure the body takes full viewport height */
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for readability */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Ensure vertical alignment */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 0 20px; /* Avoid content touching the edges */
+    box-sizing: border-box;
+}
+
+.ask-question-container {
+    margin-top: 30%;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%; /* Full width but constrained by max-width */
+    padding: 20px;
+    background-color: #1f1f1f; /* Dark card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+    text-align: center;
+}
+
+.ask-question-title {
+    font-size: 24px;
+    color: #ffffff; /* White title */
+    margin-bottom: 20px;
+}
+
+.ask-question-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ask-question-input {
+    padding: 12px;
+    width: 100%; /* Use full width for responsiveness */
+    max-width: 400px; /* Limit max width for larger screens */
+    margin: 10px 0;
+    border: 1px solid #444; /* Darker border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0; /* Light text in input */
+}
+
+.ask-question-button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.ask-question-button:disabled {
+    background-color: grey;
+}
+
+.ask-question-button:hover {
+    background-color: #218838;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.response-container {
+    margin-top: 20px;
+    text-align: left;
+    background-color: #2c2c2c; /* Darker response container */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
+}
+
+.response-title {
+    font-size: 20px;
+    color: #ffffff; /* White text */
+    margin-bottom: 10px;
+}
+
+.response-message {
+    font-size: 16px;
+    color: #e0e0e0; /* Light response text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .ask-question-title {
+        font-size: 20px; /* Slightly smaller title on smaller screens */
+    }
+
+    .ask-question-button {
+        font-size: 14px; /* Smaller button text on mobile */
+    }
+
+    .ask-question-input {
+        font-size: 14px; /* Smaller input text on mobile */
+    }
+
+    .response-title {
+        font-size: 18px; /* Smaller response title on mobile */
+    }
+
+    .response-message {
+        font-size: 14px; /* Smaller response message on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 10px; /* Extra padding on very small screens */
+    }
+
+    .ask-question-container {
+        padding: 15px; /* Slightly reduced padding for small screens */
+    }
+
+    .ask-question-button {
+        padding: 10px 15px; /* Smaller button padding for small screens */
+    }
+
+    .ask-question-title {
+        font-size: 18px; /* Smaller title on extra small screens */
+    }
+}

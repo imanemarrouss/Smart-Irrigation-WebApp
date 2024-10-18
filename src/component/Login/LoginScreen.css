@@ -1,0 +1,92 @@
+.Login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Assurez-vous que cela est présent */
+    height: 100vh; /* Gardez cela pour occuper toute la hauteur */
+    background: url('./Designer.webp') no-repeat center center;
+    background-size: cover;
+    background-color: #e8f5e9; /* Light green background for fallback */
+    margin: 0; /* Retirez les marges */
+    padding: 0; /* Retirez les paddings */
+  }
+  
+  .auth-container {
+    width: 90%; /* Vous pouvez ajuster cela si nécessaire */
+    max-width: 400px; /* Limitez la largeur maximale */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #4CAF50; /* Green border */
+    margin: auto; /* Centre le conteneur */
+  }
+  .title {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #2E7D32; /* Dark green color for title */
+  }
+  
+  .sub-header {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #7f8c8d;
+  }
+  
+  .input {
+      width: calc(100% - 24px);
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #4CAF50; /* Green border */
+      background-color: #f9fbe7; /* Very light green background */
+  }
+  
+  .password-container {
+      position: relative;
+  }
+  
+  .eye-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #7f8c8d;
+  }
+  
+  .button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50; /* Green background */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+      background-color: #388E3C; /* Darker green on hover */
+  }
+  
+  .toggle-text {
+      color: #3498db;
+      margin-top: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+  }
+  
+  .notification {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #dcedc8; /* Light green notification background */
+      border-radius: 5px;
+      border: 1px solid #4CAF50; /* Green border */
+  }
