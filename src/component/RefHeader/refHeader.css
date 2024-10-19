@@ -1,0 +1,90 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90%; /* Assure que l'en-tête occupe toute la hauteur de la fenêtre */
+    background-image: url('../../assets/Rectangle 12.png'); /* Remplace par ton image de fond */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .enter {
+    text-align: center;
+    padding: 20px; /* Espacement intérieur */
+    max-width: 800px; /* Largeur maximale du contenu */
+    width: 100%; /* Permet à la div de prendre toute la largeur disponible */
+    margin: 0 auto; /* Centre le contenu */
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.363); /* Fond blanc avec opacité pour le contraste */
+    outline: 10px solid rgb(9, 9, 9);
+    margin-top:140px ;
+    margin-bottom: 100px;
+  }
+  
+  /* Styles du titre */
+  h1 {
+    font-size: 2.5rem; /* Taille de la police par défaut */
+    color: #4A9E3B; /* Couleur verte */
+  }
+  
+  /* Styles du paragraphe */
+  p {
+    margin-top: 12px; /* Marge au-dessus du paragraphe */
+    color: #4A4A4A; /* Couleur du texte */
+    font-size: 1.125rem; /* Taille de la police du paragraphe */
+    line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+    margin: 0 auto;
+  }
+  
+  /* Styles du bouton */
+  button {
+    background-color: #4A9E3B; /* Couleur de fond */
+    padding: 10px 20px; /* Espacement intérieur du bouton */
+    border-radius: 8px; /* Coins arrondis */
+    color: white; /* Couleur du texte */
+    font-weight: bold; /* Gras */
+    margin-top: 20px; /* Marge au-dessus du bouton */
+  }
+  
+  /* Styles responsifs */
+  @media (max-width: 768px) {
+    .enter {
+      padding: 15px; /* Réduit l'espacement intérieur */
+      max-width: 90%; /* Permet à la div de s'étendre sur 90% de l'écran */
+      width: 90%; /* Largeur de la div à 90% */
+    }
+  
+    h1 {
+      font-size: 2rem; /* Taille de police pour petits écrans */
+    }
+  
+    p {
+      font-size: 1rem; /* Taille de police pour petits écrans */
+      margin-top: 8px; /* Marge réduite */
+    }
+  
+    button {
+      padding: 8px 16px; /* Espacement intérieur réduit */
+      margin-top: 15px; /* Marge réduite */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .enter {
+      padding: 10px; /* Réduit encore l'espacement intérieur pour les très petits écrans */
+      max-width: 95%; /* Permet à la div de s'étendre sur 95% de l'écran */
+      width: 95%; /* Largeur de la div à 95% */
+    }
+  
+    h1 {
+      font-size: 1.5rem; /* Taille de police encore plus petite pour les très petits écrans */
+    }
+  
+    p {
+      font-size: 0.9rem; /* Taille de police réduite pour les très petits écrans */
+    }
+  
+    button {
+      padding: 6px 12px; /* Espacement intérieur encore plus réduit */
+    }
+  }
