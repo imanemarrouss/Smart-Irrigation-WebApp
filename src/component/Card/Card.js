@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './card.css'; // Assurez-vous que votre fichier CSS est bien chargé
+import './card.css'; 
 
 const Card = () => {
   const initialImages = [

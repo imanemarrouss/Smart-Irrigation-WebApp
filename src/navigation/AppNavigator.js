@@ -23,7 +23,9 @@ import LoginScreen from '../component/Login/LoginScreen';
 // import { AllPlants } from '../screens/AllPlants';
 // import RagChainScreen from '../screens/RagChainScreen';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import AskQuestion from '../component/Rag/AskQuestion';
+// import AskQuestion from '../component/Rag/AskQuestion';
+// import Reference from '../component/Reference';
+import SubDomain from '../component/SubDomain';
 
 const AppNavigator = () => {
   return (
@@ -31,7 +33,7 @@ const AppNavigator = () => {
     <Routes>
       <Route path="/" element={<HomeScreen />} />
       <Route path='/home' element={<HomeScreen/>}></Route>
-      <Route path='/referentiel' element={<AskQuestion/>} />
+      <Route path='/referentiel' element={<SubDomain/>} />
       <Route path='/sign' element={<LoginScreen/>} />
 
     </Routes>
