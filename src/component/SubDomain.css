@@ -1,7 +1,7 @@
 /* Container for the entire page with green background */
 .subdomain-container {
     display: flex;
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: center; /* Align items to the left */
     flex-wrap: wrap; /* Allow items to wrap onto new rows */
     padding: 100px; /* Add padding around the container */
     gap: 20px; /* Add gap between cards */
@@ -9,7 +9,10 @@
     width: 100%; /* Ensure container takes full width */
     min-height: 100vh; /* Ensure container fills at least full page height */
     box-sizing: border-box; /* Include padding in the width calculation */
+    align-items: center;
 }
+
+
 
 /* Card styles */
 .card {
@@ -71,6 +74,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for the modal */
     text-align: center;
     position: relative;
+   
 }
 
 /* Close button */

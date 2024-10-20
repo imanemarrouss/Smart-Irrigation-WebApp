@@ -1,14 +1,14 @@
 import React from 'react'
 import RefHeader from './RefHeader/refHeader'
-import Card from './Card/Card'
-import Navbar from './navbar'
+
 import Footer from './Footer'
+import SubDomain from './SubDomain.js'
 const Reference = () => {
   return (
     <div>
-    <Navbar/>
+  
     <RefHeader/>
-    <Card/>
+    <SubDomain/>
     <Footer/>
     </div>
   )

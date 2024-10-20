@@ -25,7 +25,8 @@ import LoginScreen from '../component/Login/LoginScreen';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import AskQuestion from '../component/Rag/AskQuestion';
 // import Reference from '../component/Reference';
-import SubDomain from '../component/SubDomain';
+//import SubDomain from '../component/SubDomain';
+import Reference from '../component/Reference';
 
 const AppNavigator = () => {
   return (
@@ -33,7 +34,7 @@ const AppNavigator = () => {
     <Routes>
       <Route path="/" element={<HomeScreen />} />
       <Route path='/home' element={<HomeScreen/>}></Route>
-      <Route path='/referentiel' element={<SubDomain/>} />
+      <Route path='/referentiel' element={<Reference/>} />
       <Route path='/sign' element={<LoginScreen/>} />
 
     </Routes>

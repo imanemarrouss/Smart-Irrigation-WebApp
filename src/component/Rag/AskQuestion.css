@@ -11,7 +11,6 @@ body {
     display: flex;
     flex-direction: column; /* Ensure vertical alignment */
     justify-content: center;
-    align-items: center;
     height: 100vh; /* Full viewport height */
     padding: 0 20px; /* Avoid content touching the edges */
     box-sizing: border-box;

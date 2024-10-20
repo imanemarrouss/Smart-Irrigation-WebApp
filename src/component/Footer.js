@@ -3,7 +3,7 @@ import logo from '../assets/nabta.png';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col lg:flex-row items-center justify-between p-6 lg:p-12 w-full bg-transparent">
+    <footer className="flex flex-col lg:flex-row bg-[#d7f5e1] items-center justify-between p-6 lg:p-12 w-full bg-transparent">
       {/* Section Logo */}
       <div className="flex-shrink-0 mb-6 lg:mb-0">
         <img src={logo} alt="Nabta Logo" className="h-20 lg:h-32" /> {/* Taille ajustée pour mobile et desktop */}

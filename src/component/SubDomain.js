@@ -23,7 +23,15 @@ const SubDomain = () => {
           minHeight: '100vh', // S'assure que la page prend au moins toute la hauteur
           paddingBottom: '20px', // Ajout d'un padding au bas pour espacer les éléments
           justifyContent: 'space-between', // Espacement entre les éléments
+          backgroundColor:'#2d6a4f',
         },
+        h1: {
+            fontSize: '2.5rem',
+            color: '#4A9E3B', // Couleur verte
+            fontWeight: 'bold',
+            marginTop:'10px',
+            
+          },
       };
 
 
@@ -32,7 +40,10 @@ const SubDomain = () => {
     return (
         <div style={styles.homeContainer}>
             <Navbar />
+            
+            <h1 style={styles.h1}>Our Special Domains</h1>
             <div className="subdomain-container">
+                
                 <div className="card" onClick={() => handleCardClick('Irrigation')}>
                     <div className="card-image"></div>
                     <h2 className="domain">Irrigation</h2>
@@ -60,7 +71,7 @@ const SubDomain = () => {
 
                 {/* Chatbot Modal */}
                 {showChatbot && (
-                    <div className="chatbot-modal">
+                    <div className="chatbot-modal z-20">
                         <div className="chatbot-content">
                         <button className="close-btn" onClick={() => setShowChatbot(false)}>
                             <i className="fas fa-times"></i> {/* FontAwesome close icon */}
@@ -74,8 +85,9 @@ const SubDomain = () => {
             </div>
 
             {/* Add the Footer */}
-            <Footer />
+           
         </div>
+        
     );
 };
 

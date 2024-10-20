@@ -16,6 +16,7 @@ const TopPicks = () => {
   const topPicksTitleStyle = {
     fontSize: '28px',
     margin: '50px 0px',
+    color:'black'
   };
 
   const imageStyle = {
