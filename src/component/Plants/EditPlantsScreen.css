@@ -1,0 +1,81 @@
+/* Container principal pour centrer le contenu */
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #e8f5e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur de l'image */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Image de la plante */
+.plant-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #4CAF50; /* Bordure verte */
+}
+
+/* Entrée de texte */
+.input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #4CAF50; /* Bordure verte */
+    border-radius: 5px;
+    background-color: #f0f7ef; /* Couleur de fond légère */
+}
+
+/* Conteneur pour l'identification */
+.identification-container {
+    padding: 10px;
+    border-top: 2px solid #4CAF50;
+    margin-top: 20px;
+    background-color: #f9fbe7;
+}
+
+/* Conteneur des boutons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Boutons */
+.update-button, .delete-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Bouton de mise à jour */
+.update-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Bouton de suppression */
+.delete-button {
+    background-color: #e53935;
+    color: white;
+}
+
+/* Changement de couleur au survol */
+.update-button:hover {
+    background-color: #388E3C;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}

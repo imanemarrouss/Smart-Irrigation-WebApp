@@ -1,0 +1,155 @@
+/* Base Styles */
+.container-edit {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  flex-direction: row; /* Default for large screens */
+  padding: 20px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* Image Section */
+.image-section-edit {
+  margin-top: 10vh;
+  margin-left: 20vh; /* Adjusted margin for better alignment */
+}
+
+.plant-image-edit {
+  height: auto;
+  width: 100%;
+  max-width: 400px; /* Limit image width on large screens */
+  border-radius: 10px;
+}
+
+/* Details Section */
+.details-container-edit {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  margin-left: 20vh; /* Adjusted margin for better alignment */
+}
+
+.detail-item-edit {
+  display: flex;
+  flex-direction: row; /* Align label and value in a row */
+  margin-bottom: 20px;
+}
+
+.detail-label-edit {
+  font-family: 'Protest Guerrilla';
+  font-weight: bold;
+  color: #4CAF50;
+  width: 150px;
+}
+
+.detail-value-edit {
+  color: #7f8c8d;
+  flex-grow: 1;
+  margin-left: 20px; /* Add space between label and value */
+}
+
+/* Action Buttons */
+.action-buttons-edit {
+  display: flex;
+  justify-content: flex-start; /* Ensure buttons stay in the same row */
+  gap: 30vh; /* Space between buttons */
+  margin-top: 20px;
+}
+
+.action-button-edit {
+  padding: 10px;
+  background-color: transparent;
+  color: #087ef3;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-edit {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .image-section-edit {
+    margin-top: 15vh;
+    margin-left: 10vh;
+  }
+  .details-container-edit {
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2vh;
+    margin-left: 10vh; /* Adjusted margin for better alignment */
+  }
+  .detail-item-edit {
+    display: flex;
+    flex-direction: row; /* Align label and value in a row */
+  }
+}
+@media screen and (max-width: 768px) {
+  .detail-label-edit {
+    font-family: 'Protest Guerrilla';
+    font-weight: bold;
+    color: #4CAF50;
+    width: 150px;
+    font-size: 18px;
+    align-items: self-start;
+  }
+  
+  .detail-value-edit {
+    color: #7f8c8d;
+    font-size: 16px;
+    align-items: self-start;
+
+    margin-left: -10px; /* Add space between label and value */
+  }
+ 
+}
+@media screen and (max-width: 425px) {
+  .container-edit {
+    flex-direction: column; /* Stack content vertically */
+    padding: 10px; /* Reduced padding */
+  }
+
+  .image-section-edit {
+    margin: 0; /* Remove margins for better fit */
+    margin-top: 20px;
+    text-align: center; /* Center the image */
+  }
+
+  .plant-image-edit {
+    width: auto; /* Allow width to adjust automatically */
+    max-width: 90%; /* Limit the maximum width */
+    max-height: 400px; /* Set a maximum height to limit vertical space */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add space above the image */
+    border-radius: 10px; /* Keep the border radius */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+ 
+
+  .details-container-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 0px;
+    margin-left: 8vh;
+  }
+
+
+}
+@media screen and (max-width: 375px) {
+
+  .action-buttons-edit {
+    gap: 25vh; /* Space between buttons */
+  }
+  
+}
+@media screen and (max-width: 320px) {
+  .details-container-edit{
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,154 @@
+body {
+    background-color: #e0f7e9; /* Light green background */
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full height */
+}
+
+.add-plant-container {
+    max-width: 100%; /* Full width */
+    width: 90%; /* Responsive width */
+    margin: 20px auto; /* Centered with margin */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 90vh; /* Limitez la hauteur du conteneur */
+    overflow-y: auto; /* Permettre le défilement */
+    display: flex;
+    overflow-y: auto; /* Enable vertical scrolling */
+
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements */
+}
+
+/* Autres styles inchangés... */
+
+.title {
+    text-align: center;
+    color: #333;
+}
+
+.alert {
+    color: red;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #007BFF;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px 0;
+    height: 300px; /* Increased height */
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflow */
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 15px;
+}
+
+.image-text {
+    color: #888;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Full width */
+}
+
+.button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #a0a0a0;
+}
+
+.input {
+    width: 100%; /* Largeur totale */
+    max-width: 300px; /* Longueur un peu moyenne */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.result-container {
+    background-color: #f8f9fa00;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex; /* Utilise flexbox pour la mise en page */
+    flex-direction: row; /* Aligne les éléments en ligne */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+.loading {
+    text-align: center;
+    font-weight: bold;
+    color: #007BFF;
+}
+.result-content {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    width: 100%; /* Full width */
+    gap: 20px; /* Espace entre l'image et les informations */
+    
+}
+.result-image {
+    flex: 1; /* Take up space proportionally */
+    max-width: 250px; /* Limite la largeur de l'image */
+    margin-right: 20px; /* Espacement à droite de l'image */
+    margin-top: 50px; /* Espace en haut de l'image */
+}
+
+.result-image-display {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.result-info {
+    flex: 1; /* Take up space proportionally */
+    display: flex;
+    flex-direction: column; /* Stack input fields vertically */
+    gap: 2px; /* Space between input fields */
+    margin-top: 30px; /* Space between image and input fields */
+}
+
+.button_save {
+    background-color: transparent; /* Fond transparent */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur en forme de main */
+    display: flex; /* Utiliser flexbox pour centrer l'image */
+    align-items: center; /* Centrer verticalement */
+    justify-content: center; /* Centrer horizontalement */
+    padding: 10px; /* Espacement autour de l'image */
+    transition: transform 0.2s; /* Ajoute une transition */
+}
+
+.button_save:disabled {
+    opacity: 0.5; /* Réduire l'opacité si désactivé */
+    cursor: not-allowed; /* Curseur pour indiquer que le bouton est désactivé */
+}
+
+.button_save img {
+    width: 50px; /* Taille moyenne de l'image */
+    height: 50px; /* Taille moyenne de l'image */
+}
+
+.button_save:hover {
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+}

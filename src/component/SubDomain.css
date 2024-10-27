@@ -64,17 +64,16 @@
     align-items: center;
 }
 
-/* Chatbot content box */
 .chatbot-content {
     background-color: rgb(76, 104, 73);
     padding: 50px;
     border-radius: 15px;
-    width: 600px; /* Increased modal width */
-    height: 500px; /* Increased modal height */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for the modal */
+    width: 600px;
+    height: 500px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
-   
+    overflow-y: auto; /* Défilement si contenu trop grand */
 }
 
 /* Close button */

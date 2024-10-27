@@ -27,6 +27,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import Reference from '../component/Reference';
 //import SubDomain from '../component/SubDomain';
 import Reference from '../component/Reference';
+import UserProfile from '../component/Login/UserProfile';
+import HomeScreenPlants from '../component/Plants/HomeScreenPlants';
+import AddPlantsScreen from '../component/Plants/AddPlantsScreen';
+import EditPlantsScreen from '../component/Plants/EditPlantsScreen';
+import PlantDetailScreen from '../component/Plants/PlantDetailScreen';
+
+
 
 const AppNavigator = () => {
   return (
@@ -35,8 +42,14 @@ const AppNavigator = () => {
       <Route path="/" element={<HomeScreen />} />
       <Route path='/home' element={<HomeScreen/>}></Route>
       <Route path='/referentiel' element={<Reference/>} />
-      <Route path='/sign' element={<LoginScreen/>} />
-
+      <Route path='/login' element={<LoginScreen/>} />
+      
+        <Route path="/user-profile" element={<UserProfile />}/ >
+        <Route path="/home-screen-plants" element={<HomeScreenPlants />} />
+        <Route path="/plant-detail-screen/:id" element={<PlantDetailScreen />} />
+        <Route path="/add-plants-screen" element={<AddPlantsScreen />} />
+        <Route path="/edit-plants-screen/:plantId" element={<EditPlantsScreen />} />
+              
     </Routes>
     </BrowserRouter>
   );

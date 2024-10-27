@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import './LoginScreen.css'; // Use this for styles
@@ -51,50 +50,49 @@ const LoginScreen = ({ navigation }) => {
     }
   };
 
-  return (
-    <div className="Login-container">
-      
-      <div className="auth-container">
-        {!user && (
-          <>
-            <h1 className="title">{isLogin ? 'Welcome Back!' : 'Create an Account'}</h1>
-            <p className="sub-header">Enter your credentials to manage your garden</p>
-            <input
-              className="input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-              type="email"
-            />
-            <div className="password-container">
+    return (
+      <div className="Login-container">
+        <div className="auth-container">
+          {!user && (
+            <>
+              <h1 className="title_login">{isLogin ? 'Welcome Back!' : 'Create an Account'}</h1>
+              <p className="sub-header_login">Enter your credentials to manage your garden</p>
               <input
-                className="input"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                type={showPassword ? 'text' : 'password'}
-              />
-              {password.length > 0 && (
-                <button
-                  className="eye-icon"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? <FaEyeSlash /> : <FaEye />}
-                </button>
-              )}
-            </div>
-            <button className="button" onClick={handleAuthentication}>
-              {isLogin ? 'Sign In' : 'Sign Up'}
-            </button>
-            <button className="toggle-text" onClick={() => setIsLogin(!isLogin)}>
-              {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Sign In'}
-            </button>
-          </>
-        )}
-        {notification && <div className="notification">{notification}</div>}
-      </div>
-    </div>
-  );
-};
+  className="input_login email_input"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  placeholder="Email"
+  type="email"
+/>
+<input
+  className="input_login password_input"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  placeholder="Password"
+  type={showPassword ? 'text' : 'password'}
+/>
 
-export default LoginScreen;
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="showPasswordCheckbox"
+                  checked={showPassword}
+                  onChange={() => setShowPassword(!showPassword)}
+                />
+                <label htmlFor="showPasswordCheckbox">Show Password</label>
+              </div>
+              <button className="button_login" onClick={handleAuthentication}>
+                {isLogin ? 'Sign In' : 'Sign Up'}
+              </button>
+              <button className="toggle-text_login" onClick={() => setIsLogin(!isLogin)}>
+                {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Sign In'}
+              </button>
+            </>
+          )}
+          {notification && <div className="notification_login">{notification}</div>}
+        </div>
+      </div>
+    );
+  };
+  
+  export default LoginScreen;
