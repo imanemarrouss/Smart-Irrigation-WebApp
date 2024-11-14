@@ -1,295 +1,168 @@
-/* User Profile CSS - Modernized and Nature-inspired */
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F5DC; /* Light Beige */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+}
 
 .user-profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #E0F5E9; /* Doux vert inspiré de la nature */
-  }
-  
-  .rectangle-9 {
-    background: #FFFFFF;
-    width: 30vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    border-radius: 20px; /* Coins arrondis pour un style plus moderne */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  }
-  
-  /* Style de la scrollbar pour Webkit (Chrome, Safari) */
-  .rectangle-9::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .rectangle-9::-webkit-scrollbar-thumb {
-    background-color: #88B894; /* Vert doux */
-    border-radius: 10px;
-  }
-  
-  .rectangle-9::-webkit-scrollbar-thumb:hover {
-    background-color: #557B63; /* Couleur plus foncée au survol */
-  }
-  
-  /* Group 7 - Profile Information */
-  .group-7 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .ellipse-1 {
-    width: 15vw;
-    height: 15vw;
-    border-radius: 50%;
-    background-color: #ccc;
-    margin-top: 4rem;
-    transform: translateY(-10px); /* Ajustement de l'écart avec le haut */
-    transition: transform 0.4s ease; /* Animation douce pour l'image */
-  }
-  
-  .ellipse-1:hover {
-    transform: translateY(-20px); /* L'image remonte légèrement au survol */
-  }
-  
-  .preview-profile {
-    font-family: 'Inknut Antiqua', serif;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: #62a37a; /* Vert foncé naturel */
-  }
-  
-  .user-email {
-    font-family: 'Inknut Antiqua', serif;
-    font-size: 1.2rem;
-    color: #4B6C43; /* Ton vert plus doux */
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Group 8 - Password Change */
-  .group-8 {
-    width: 90%;
-    margin-bottom: 2rem;
-  }
-  
-  .change-password {
-    background-color: #B2E8B4; /* Vert pastel inspiré des plantes */
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 50px;
-    font-family: 'Inknut Antiqua', serif;
-    font-size: 1rem;
-    color: #2F5233;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-  }
-  
-  /* Effets sur les boutons */
-  .change-password:hover {
-    background-color: #88B894; /* Couleur plus foncée au survol */
-    border-color: #4B6C43; /* Bords visibles au survol */
-  }
-  
-  .dark-mode, .sign-out {
-    background-color: #F1F7ED; /* Couleur claire naturelle */
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 10%;
-    border-radius: 50px;
-    font-family: 'Inknut Antiqua', serif;
-    font-size: 1rem;
-    color: #2F5233;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-  }
-  
-  .dark-mode:hover, .sign-out:hover {
-    background-color: #DDEBD6;
-    border-color: #4B6C43;
-    transform: scale(1.05); /* Légère agrandissement */
-  }
-  
-  .change-password:active, .dark-mode:active, .sign-out:active {
-    transform: scale(0.95);
-  }
-  
-  /* Style des inputs */
-  .user-profile input[type='password'],.user-profile input[type='text'] {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    border: 1px solid #88B894;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  
-  /* Effet focus sur les inputs */
-  .user-profile input[type='password']:focus,.user-profile input[type='text']:focus {
-    border-color: #4B6C43;
-    outline: none;
-  }
-  
-  /* Animations au survol */
-  button {
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  /* Media Queries for small screens (mobile devices) */
-  @media (max-width: 768px) {
-    .rectangle-9 {
-      width: 90vw;
-      padding: 1.5rem;
-    }
-  
-    .ellipse-1 {
-      width: 20vw;
-      height: 20vw;
-    }
-  
-    .preview-profile {
-      font-size: 1.5rem;
-    }
-  
-    .user-email {
-      font-size: 0.9rem;
-    }
-  
-    .change-password, .dark-mode, .sign-out {
-      font-size: 1rem;
-      padding: 0.7rem;
-    }
-  
-    .user-profile input[type='password'],.user-profile input[type='text'] {
-      padding: 0.6rem;
-    }
-  }
-  
-  /* Media Queries for extra-small screens (phones in portrait mode) */
-  @media (max-width: 480px) {
-    .rectangle-9 {
-      width: 95vw;
-      padding: 1rem;
-    }
-  
-    .ellipse-1 {
-      width: 25vw;
-      height: 25vw;
-    }
-  
-    .preview-profile {
-      font-size: 1.2rem;
-    }
-  
-    .user-email {
-      font-size: 0.8rem;
-    }
-  
-    .change-password, .dark-mode, .sign-out {
-      font-size: 0.9rem;
-      padding: 0.5rem;
-    }
-  
-    .user-profile input[type='password'], input[type='text'] {
-      padding: 0.5rem;
-    }
-  }
-  /* Style des inputs */
-  .user-profile input[type='password'],.user-profile input[type='text'] {
-    width: 90%;
-    padding: 0.8rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 12px; /* Bords arrondis pour un style plus moderne */
-    border: 2px solid #A3C9A8; /* Bordure verte douce inspirée de la nature */
-    background-color: #F1F7ED; /* Couleur de fond douce, inspirée des feuilles */
-    font-size: 1rem;
-    color: #2F5233; /* Couleur du texte foncée mais naturelle */
-    transition: all 0.3s ease; /* Transition pour des interactions fluides */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre pour le relief */
-  }
-  
-  /* Effet focus sur les inputs */
-  .user-profile input[type='password']:focus,.user-profile input[type='text']:focus {
-    border-color: #557B63; /* Bordure plus foncée au focus */
-    background-color: #E8F3E8; /* Couleur de fond légèrement plus vive au focus */
-    outline: none; /* Supprimer la bordure bleue par défaut */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée pour le focus */
-  }
-  
-  /* Placeholder style */
-  .user-profile input[type='password']::placeholder,.user-profile input[type='text']::placeholder {
-    color: #A3C9A8; /* Placeholder avec une couleur verte douce */
-    opacity: 0.7; /* Légèrement plus transparent */
-  }
-  
-  /* Transition douce pour les inputs */
-  .user-profile input[type='password'],.user-profile input[type='text'] {
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-  body.dark-theme {
-    background-color: #000000;
-    color: #ffffff;
-  }
-  
-  body.dark-theme .rectangle-9 {
-    background-color: #000000;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-  }
-  
-  body.dark-theme .user-profile input {
-    background-color: #4F4F4F;
-    color: #E0E0E0;
-    border-color: #a4e9ad;
-  }
-  .show-button {
-    background-color: #4CAF50; /* Vert vif */
-    color: #FFFFFF; /* Texte blanc */
-    border: none; /* Pas de bordure */
-    border-radius: 25px; /* Coins arrondis */
-    padding: 0.6rem 1rem; /* Espacement interne */
-    font-family: 'Inknut Antiqua', serif; /* Police */
-    font-size: 0.74rem; /* Taille de la police */
-    cursor: pointer; /* Curseur en main */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions douces */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  top: 60px; /* Adjust for positioning */
+  flex-direction: column; /* Stack profile elements vertically */
 }
 
-/* Effet au survol */
-.show-button:hover {
-    background-color: #45a049; /* Vert légèrement plus foncé */
-    transform: scale(1.05); /* Légère augmentation de taille au survol */
+.profile-container {
+  background: transparent; /* Remove background */
+  width: auto; /* Adjust width to content */
+  max-width: none; /* Remove max-width */
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none; /* Remove box shadow */
+  padding: 0; /* Remove padding */
+  transition: none; /* Remove transition effects */
 }
 
-/* Style pour le bouton Enregistrer */
-.save-button {
-    background-color: #2196F3; /* Bleu vif */
-    color: #FFFFFF; /* Texte blanc */
-    border: none; /* Pas de bordure */
-    border-radius: 25px; /* Coins arrondis */
-    padding: 0.6rem 1rem; /* Espacement interne */
-    font-family: 'Inknut Antiqua', serif; /* Police */
-    font-size: 0.74rem; /* Taille de la police */
-    cursor: pointer; /* Curseur en main */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions douces */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Effet au survol */
-.save-button:hover {
-    background-color: #1976D2; /* Bleu légèrement plus foncé */
-    transform: scale(1.05); /* Légère augmentation de taille au survol */
+.avatar {
+  width: 120px; /* Slightly larger avatar */
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+  border: 3px solid #B2E8B4; /* Soft green border */
 }
 
-/* Effet au clic */
-.save-button:active, .show-button:active {
-    transform: scale(0.95); /* Réduction au clic */
+.avatar:hover {
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+.welcome-message {
+  font-size: 1.8rem; /* Larger font for welcome message */
+  color: #62a37a; /* Dark green */
+  font-weight: bold;
+}
+
+.user-email {
+  font-size: 1.2rem;
+  color: #4B6C43; /* Softer green */
+  margin-bottom: 20px;
+}
+
+.actions {
+  margin-bottom: 20px;
+}
+
+.edit-button, .save-button, .theme-toggle, .sign-out {
+  background-color: #B2E8B4; /* Soft green */
+  color: #2F5233; /* Dark text */
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px; /* Increased padding */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: bold;
+  display: flex; /* Flex for icons */
+  align-items: center; /* Centering */
+  gap: 10px; /* Space between icon and text */
+  margin-left: 30px;
+}
+
+.edit-button:hover, .save-button:hover, .theme-toggle:hover, .sign-out:hover {
+  background-color: #88B894; /* Darker green on hover */
+  transform: scale(1.05);
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.password-input-container {
+  position: relative;
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  width: 100%;
+  padding: 12px 40px; /* Increased padding for comfort */
+  margin: 10px 0;
+  border-radius: 10px; /* Modern rounded corners */
+  border: 2px solid #A3C9A8; /* Soft green border */
+  font-size: 1rem;
+  transition: border-color 0.3s ease; /* Transition on border */
+  flex: 1; /* Allow input to take up available space */
+  padding-right: 40px; /* Add padding to the right for the icon */
+}
+
+.password-input:focus {
+  border-color: #62a37a; /* Focus border color */
+  background-color: #E8F3E8; /* Light green background on focus */
+}
+
+.toggle-password {
+  /* Remove these styles */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #2F5233;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+/* Style for Theme Toggle and Sign Out buttons */
+.theme-actions {
+  display: flex;
+  justify-content: space-evenly; /* Space buttons evenly */
+  width: 100%; /* Full width */
+  margin-bottom: 20px; /* Add margin to the bottom */
+  padding: 10px; /* Add padding around the buttons */
+}
+
+.theme-toggle, .sign-out {
+  flex: 1; /* Equal width for buttons */
+  margin: 0 5px; /* Margin between buttons */
+  font-size: 1rem;
+  display: flex; /* Flex for icons */
+  align-items: center; /* Centering */
+  gap: 10px; /* Space between icon and text */
+}
+
+.sign-out {
+  display: flex; /* Enable flexbox for icons */
+  align-items: center; /* Center icon and text vertically */
+  gap: 10px; /* Space between icon and text */
+}
+
+.sign-out svg { /* Style the icon */
+  font-size: 1.5rem; /* Adjust the icon size */
+  color: #2F5233; /* Set the icon color */
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+  background-color: #000; /* Dark background */
+  color: #fff; /* Light text */
+}
+
+body.dark-theme .profile-container {
+  background-color: transparent; /* Dark background for profile */
+  box-shadow: none; /* Remove shadow */
+}
+
+body.dark-theme .password-form input {
+  background-color: #333; /* Dark input background */
+  color: #E0E0E0; /* Light text */
+  border-color: #a4e9ad; /* Soft green border */
 }

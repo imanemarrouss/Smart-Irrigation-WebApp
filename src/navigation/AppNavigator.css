@@ -1,0 +1,6 @@
+.app-navigator-container {
+    display: flex; /* Utiliser flexbox pour aligner Sidebar et main-content */
+    height: 100vh; /* Prendre toute la hauteur de la fenêtre */
+  }
+  
+  

@@ -1,0 +1,129 @@
+/* Resetting body styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F5DC; /* Beige clair */
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Main container to hold both sidebar and content */
+  .app-navigator-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    min-height: 100vh; /* Sidebar takes full height */
+    width: 100px; /* Default width */
+    background-color: rgba(76, 175, 80, 0.36); /* Greenish background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s;
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  .sidebar.hovered {
+    width: 200px; /* Sidebar width on hover */
+  }
+  
+  /* User section in the sidebar */
+  .user-section {
+    width: 100%;
+    height: auto; /* Automatically adjust based on content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Avatar styling */
+  .avatar {
+    width: 30px;
+    height: 30px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    object-fit: cover;
+    padding: 2px;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  
+  /* Navigation links in the sidebar */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .nav-item {
+    color: #FFF;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-label {
+    margin-left: 10px;
+    transition: opacity 0.3s;
+  }
+  
+  .nav-item:hover {
+    color: #6fb48eff; /* Accent color on hover */
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (min-width: 768px) {
+    .sidebar {
+      width: 80px; /* Sidebar width for tablets */
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .sidebar {
+      width: 100px; /* Sidebar width for desktop */
+    }
+    .avatar {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  /* Overlay when profile is displayed */
+  .user-profile-overlay {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Position beside the sidebar */
+    width: calc(100% - 250px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  /* User profile box styling */
+  .user-profile-overlay .user-profile {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    position: relative;
+    margin-top: 50px;
+  }
+  

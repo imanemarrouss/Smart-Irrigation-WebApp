@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Line } from 'react-chartjs-2';
 import { fetchData } from '../services/NodeMCUService';
 import { database } from '../config/firebaseConfig';
 import { ref, get } from 'firebase/database';
+import './IrrigationHistoryScreen.css'; // Import the CSS file for styling
 
 const IrrigationHistoryScreen = () => {
   const [pumpStatus, setPumpStatus] = useState('');
@@ -66,51 +66,26 @@ const IrrigationHistoryScreen = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.title}>Current Pump Status: {pumpStatus}</Text>
-      <Text style={styles.title}>Current Sensor Status: {sensorStatus}</Text>
-      <Text style={styles.subtitle}>Irrigation History:</Text>
+    <div className="container">
+      <h1 className="title">Current Pump Status: {pumpStatus}</h1>
+      <h2 className="title">Current Sensor Status: {sensorStatus}</h2>
+      <h2 className="subtitle">Irrigation History:</h2>
       
       {irrigationHistory.length > 0 ? (
         <Line data={chartData} options={chartOptions} height={220} />
       ) : (
-        <Text>No data available</Text>
+        <p>No data available</p>
       )}
       
       {irrigationHistory.map((entry) => (
-        <View key={entry.id} style={styles.historyEntry}>
-          <Text>Pump Status: {entry.pumpStatus}</Text>
-          <Text>Sensor Status: {entry.sensorStatus}</Text>
-          <Text>Timestamp: {new Date(entry.timestamp).toLocaleString()}</Text>
-        </View>
+        <div key={entry.id} className="historyEntry">
+          <p>Pump Status: {entry.pumpStatus}</p>
+          <p>Sensor Status: {entry.sensorStatus}</p>
+          <p>Timestamp: {new Date(entry.timestamp).toLocaleString()}</p>
+        </div>
       ))}
-    </ScrollView>
+    </div>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: '#f5f5f5',
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginVertical: 10,
-  },
-  historyEntry: {
-    backgroundColor: '#fff',
-    padding: 10,
-    marginVertical: 5,
-    borderRadius: 5,
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.2)',
-  },
-});
 
 export default IrrigationHistoryScreen;

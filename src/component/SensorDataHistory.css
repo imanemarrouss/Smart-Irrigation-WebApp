@@ -1,0 +1,34 @@
+/* SensorDataHistory.css */
+
+.container {
+    max-width: 700px; /* Limiting width for better readability */
+    margin: 20 auto; /* Center the container */
+    padding: 30px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  h2 {
+    color: #333; /* Darker color for headings */
+    margin-bottom: 10px;
+    font-size: 24px; /* Increased font size for better readability */
+  }
+  
+  .chart-container {
+    margin-top: 0px; /* Reduced top margin to bring the charts closer to the title */
+    margin-left: 0px; /* Reduced left margin for better alignment */
+    margin-bottom: 30px; /* Space between charts */
+  }
+  
+  .loading,
+  .error {
+    text-align: center; /* Centered text for loading and error messages */
+    color: #ff6347; /* Red color for error messages */
+  }
+  
+  .line-chart {
+    border: 1px solid rgba(75, 192, 192, 1); /* Border around charts */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
