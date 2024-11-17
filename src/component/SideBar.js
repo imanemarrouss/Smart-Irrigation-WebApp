@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SideBar.css';
+import './Sidebar.css';
 import { FaUsers, FaMoneyBill, FaCalendarAlt, FaCog, FaUser, FaHistory } from 'react-icons/fa';
 import { getAuth } from '@firebase/auth';
 import md5 from 'md5';
