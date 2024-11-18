@@ -106,7 +106,7 @@ import Contact from '../component/Contact';
 import NotFound from '../component/NotFound';
 import SensorDataHistory from '../component/SensorDataHistory';
 import MainLayout from '../component/MainLayout';
-
+import CurrentDataDashboard from '../component/CurrentData/CurrentDataDashboard';
 // Wrapper for components that need useNavigate
 const RouterWrapper = () => {
   const [showProfile, setShowProfile] = useState(false);  // State to control profile visibility
@@ -146,6 +146,7 @@ const RouterWrapper = () => {
       }>
         <Route index element={<HomeScreenPlants />} />
         <Route path="/history" element={<SensorDataHistory />} />
+        <Route path='current-data' element={<CurrentDataDashboard/>}/>
         <Route path="/home-screen-plants" element={<HomeScreenPlants />} />
         <Route path="/plant-detail-screen/:id" element={<PlantDetailScreen />} />
         <Route path="/add-plants-screen" element={<AddPlantsScreen />} />

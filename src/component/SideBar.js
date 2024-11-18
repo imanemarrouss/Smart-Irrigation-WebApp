@@ -19,7 +19,7 @@ const SideBar = ({ setShowProfile, showProfile, handleShowProfile }) => {
   const navItems = [
     { icon: <FaUser />, label: 'Account', onClick: () => handleShowProfile(window.location.pathname) },
     { icon: <FaUsers />, label: 'Contacts' },
-    { icon: <FaMoneyBill />, label: 'Products' },
+    { icon: <FaMoneyBill />, label: 'Products' , onClick:() => navigate('/current-data')},
     { icon: <FaCalendarAlt />, label: 'Calendar' },
     { icon: <FaCog />, label: 'Settings' },
     { icon: <FaHistory />, label: 'History of Irrigation', onClick: () => navigate('/history') }, // New History item
