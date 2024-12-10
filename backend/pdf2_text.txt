@@ -1,0 +1,211 @@
+IOSR Journal of Electronics and Communication Engineering (IOSR-JECE)  
+e-ISSN: 2278-2834,p- ISSN: 2278-8735.Volume 10, Issue 3, Ver. II (May - Jun.2015), PP 32-36 
+www.iosrjournals.org    
+DOI: 10.9790/2834-10323236                                         www.iosrjournals.org                                         32 | Page 
+ 
+Smart Irrigation System 
+ 
+S. Darshna1, T.Sangavi2 , Sheena Mohan3, A.Soundharya4, Sukanya Desikan4 
+Department of Electronics and Communication, Amrita School of Engineering, India
+ 
+Abstract: With the water requirements in irrigation being large, there is a need for a smart irrigation system 
+that can save about 80% of the water. This prototype aims at saving time and avoiding problems like constant 
+vigilance. It also helps in water conservation by automatically providing water to the plants/gardens depending 
+on their water requirements. It can also prove to be efficient in Agricultural fields, Lawns & Parks. As 
+technology is advancing, there is always a chance of reducing risks and making work simpler. Embedded and 
+micro controller systems provide solutions for many problems. This application precisely controls water system 
+for gardens by using a sensor micro controller system. It is achieved by installing sensors in the field to monitor 
+the soil temperature and soil moisture which transmits the data to the microcontroller for estimation of water 
+demands of plants.  
+Keywords: Soil Moisture, Temperature, Moisture Sensor, Resistance Temperature Detector (RTD), Relay, 
+Microcontroller. 
+ 
+I.  
+ Introduction 
+In the present era one of the greatest problems faced by the world is water scarcity and agriculture 
+being a demanding occupation consumes plenty of water. Therefore a system is required that uses water 
+judiciously. Smart irrigation systems estimate and measure diminution of existing plant moisture in order to 
+operate an irrigation system, restoring water as needed while minimizing excess water use.  
+The soil moisture based irrigation control [1] uses Tensiometric and Volumetric techniques, which are 
+relatively simple but these quantities are related through a soil water characteristic curve that is specific to a soil 
+type. Also the sensors used require routine maintenance for proper performance. Intelligent automatic plant 
+irrigation system [2] concentrates watering plants regularly without human monitoring using a moisture sensor. 
+The circuit is build around a comparator Op-amp (LM324) and a timer which drives a relay to switch on a 
+motor.The system uses a hardware component, which is subjected to variation with the environmental 
+conditions.  
+A real-time wireless smart sensor array for scheduling irrigation[3] prototyped a real-time, smart sensor array 
+for measuring soil moisture and soil temperature that uses off-the-shelf components  was  developed and 
+evaluated for scheduling irrigation in cotton.  
+This system is specific for a crop and hence its usage is limited.Proper scheduling of irrigation is 
+critical for efficient water management in crop production, particularly under conditions of water scarcity. The 
+effects of the applied amount of irrigation water, irrigation frequency and water use are particularly important. 
+To improve water efficiency there must be a proper irrigation scheduling strategy. So our project devices a 
+simple system, using a microcontroller to automate the irrigation and watering of small potted plants or crops 
+with minimal manual interventions. 
+ 
+II. 
+ Why Need This Ststem 
+Until quite recently, India enjoyed abundant water resources. But population growth and 
+overexploitation has led to a situation where the demand for water is exceeding supply. 
+ 
+Fig1: The graph shows exponential decrease of water per capita. 
+Smart Irrigation System 
+DOI: 10.9790/2834-10323236                                         www.iosrjournals.org                                         33 | Page 
+From the graph we currently notice that the water availability is in stress. If this rate continues, then we 
+would face severe water scarcity. So there is an urgent need to conserve water. During manual irrigation, the 
+water requirement of plants/crops is not monitored. Even when the soil is moist enough, water is still provided. 
+This water is not absorbed by the plants and thus is wasted. Hence a system is to monitor the water requirements 
+of the plant is needed. Also Smart Irrigation System installation means decreased operating expense by 
+maintenance personnel. 
+ 
+III. 
+ Syetem Overview 
+This prototype monitors the amount of soil moisture and temperature. A predefined range of soil 
+moisture and temperature is set, and can be varied with soil type or crop type. In case the moisture or 
+temperature of the soil deviates from the specified range, the watering system is turned on/off. In case of dry soil 
+and high soil temperature, it will activate the irrigation system, pumping water for watering the plants.  
+The block diagram of smart irrigation system is represented in Fig1. It consists of a microcontroller 
+(ATmega328) which is the brain of the system. Both the moisture and temperature sensors are connected to the 
+input pins of the controller. The water pump and the servo motor are coupled with the output pins. If the sensors 
+depart from the predefined range, the controller turns on the pump. The servo motor is used to control the 
+angular position of the pipe, which ensures equal distribution of water to the soil. An LED indicator indicates 
+the status of the pump. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig2: block diagram of smart irrigation system 
+ 
+This system can be implemented on a large scale for farming purposes, which can further prove to be more 
+advantageous. Owing to prevailing conditions and water shortages, the optimum irrigation schedules should be 
+determined especially in farms to conserve water. 
+ 
+IV. 
+ Project Description 
+ Hardware Components: 
+1)   Soil Moisture Sensor- soil moisture sensors estimates the soil volumetric water content based on the 
+dielectric constant (soil bulk permittivity) of the soil. The dielectric constant can be thought of as the soil's 
+ability to transmit electricity. The dielectric constant of soil increases as the water content of the soil increases. 
+This response is due to the fact that the dielectric constant of water is much larger than the other soil 
+components, including air. Thus, measurement of the dielectric constant gives a predictable estimation of water 
+content. It consists of a pair of electrodes to measure the resistance of the soil. Greater the resistance, lower the 
+moisture content of the soil. 
+Smart Irrigation System 
+DOI: 10.9790/2834-10323236                                         www.iosrjournals.org                                         34 | Page 
+ 
+Fig3: Moisture sensor connected to the input pin of the microcontroller 
+ 
+2)  Temperature Sensor- A Resistance Temperature Detector(RTD) is used to measure temperature as a function 
+of resistance. As the temperature of the soil increases, the resistance of the soil also increases. RTDs readings 
+are more accurate and more repeatable. 
+ 
+ 
+Fig4: RTD connected to the input of the microcontroller 
+ 
+3)  Relay- it is used to switch on/off the pump according to the watering requirement of the soil. 
+ 
+Fig5: interfacing Arduino with pump and relay 
+ 
+ 
+ 
+ 
+Smart Irrigation System 
+DOI: 10.9790/2834-10323236                                         www.iosrjournals.org                                         35 | Page 
+4) Servo Motor and Rotating Platform- to take the water pipe to water the target plot. In order to control the 
+spray distance and angle, we use a servo motor. 
+ 
+ 
+Fig6: Sevo motor  connected to the Arduino Board 
+ 
+Hardware Design: 
+In our model, we are demonstrating watering of only one pot, so a single moisture sensor and 
+temperature sensor is used. Depending on the number of pots, the number of moisture sensor and temperature 
+sensor to be interfaced with the board will vary. When the soil moisture sensor is interfaced with the board , the 
+sensor reports values of resistances of the soil in which it is immersed into. As soil moisture sensor is analog, an 
+inbuilt ADC in Arduino is used to convert into its digital form (0-1023), which represents resistance. Dry soil 
+will have the maximum resistance and wet soil will have least resistance. Similarly, The temperature sensor 
+(RTD) reports values of temperature in terms of resistance. If the temperature of the soil is high, then the sensor 
+reports high value of resistance and vice versa. The servo motor is programmed to rotate from 0 to 180 degree. 
+It is a 3.3V motor and does not require any driver. The rotating platform is attached on the motor to provide a 
+base for the movement of the pipe. If the soil is dry, temperature sensor and moisture sensor values will be high, 
+so the pump is turned on using a relay and switched off when the values reach a threshold .The vice versa is 
+applicable for moist soil. 
+ 
+Software Design: 
+The software used in our project is Arduino. It provides a number of libraries to make programming 
+simple. In our prototype, the controller AtMega328 is programmed in Arduino. The program in Arduino 
+designates a preset range of resistance value in digital format (ranging from 0 to 1023) for both the moisture and 
+the temperature sensor. Any aberration from the set range switches on/off the pump, to water the plants.  
+ 
+V.  
+Advantages Of The System 
+This technology is recommended for efficient automated irrigation systems and it may provide a 
+valuable tool for conserving water planning and irrigation scheduling which is extendable to other similar 
+agricultural crops. Maximum absorption of the water by the plant is ensured by spreading the water uniformly 
+using a servo motor. So there is minimal wastage of water. This system also allows controlling the amount of 
+water delivered to the plants when it is needed based on types of plants by monitoring soil moisture and 
+temperature.This project can be used in large agricultural area where human effort needs to be minimized. Many 
+aspects of the system can be customized and fine tuned through software for a plant requirement. 
+ 
+VI. 
+ Result 
+The smart irrigation system was tested on a garden plant. The plant’s water requirement is 600-800mm 
+a day and temperature requirement of the soil ranges from 50oC- 100oC. In the Arduino code, the moisture and 
+temperature range were set as 300-700 and 450-800  respectively (which delineates the corresponding resistance 
+value in digital format). Moreover this system proves to be cost effective and proficient in conserving water and 
+reducing its wastage. 
+ 
+VII.  
+Conclusion 
+In the present era, the farmers use irrigation technique through the manual control, in which the farmers 
+irrigate the land at regular intervals [5].This process seems to consume more water and results in water wastage. 
+Smart Irrigation System 
+DOI: 10.9790/2834-10323236                                         www.iosrjournals.org                                         36 | Page 
+Moreover in dry areas where there is inadequate rainfall, irrigation becomes difficult. Hence we require an 
+automatic system that will precisely monitor and control the water requirements in the field. Installing Smart 
+irrigation system saves time and ensures judicious usage of water. Moreover this architecture uses 
+microcontroller which promises an increase in system life by reducing power consumption. 
+ 
+VIII.  Future Scope 
+Our project can be improvised by adding a Webscaper which can predict the weather and water the 
+plants/crops accordingly. If rain is forecasted, less water is let out for the plants. Also, a GSM module can be 
+included so that the user can control the system via smart phone. A water meter can be installed to estimate the 
+amount of water used for irrigation and thus giving a cost estimation. A solenoid valve can be used for varying 
+the volume of water flow. Furthermore, Wireless sensors can also be used. 
+Acknowledgement 
+We would like to extend our sincere thanks to all those who played a role in the completion of this 
+project. Firstly, we are highly indebted to Amrita School of Engineering, Coimbatore for their constant 
+supervision and support. We would also like to thank Mrs. Souparnika for her guidance, and encouragement 
+throughout the project work. Lastly, we are immensely grateful to all those  involved in this project as without 
+their inspiration and valuable suggestion it would not have been possible to develop the project within the 
+prescribed time period. 
+ 
+References 
+[1]  
+Rafael Muñoz-Carpena and Michael D. Dukes,  Automatic Irrigation Based on Soil Moisture for Vegetable Crops,  IFAS Extension, 
+2005. 
+[2]  
+K.N.Manjula    B.Swathi    and    D.Sree    Sandhya , Intelligent Automatic Plant Irrigation System. 
+ [3]  
+G. Vellidis , M. Tucker, C. Perry, C. Kvien, C. Bednarz, “A Real-Time Wireless Smart Sensor Array for Scheduling Irrigation”, 
+National Environmentally Sound Production Agriculture Laboratory (NESPAL), 2007. 
+[4] 
+Constantinos Marios Angelopoulos, Sotiris Nikoletseas , Georgios Constantinos Theofanopoulos, A Smart System for Garden 
+Watering using Wireless Sensor Networks, MobiWac ,October 31–November 4, 2011. 
+[5]  
+R.suresh, S.Gopinath, K.Govindaraju, T.Devika, N.Suthanthira Vanitha, GSM based Automated Irrigation Control using Raingun 
+Irrigation System, International Journal of Advanced Research in Computer and Communication Engineering ,Vol. 3, Issue 2, 
+February 2014. 
+ 
