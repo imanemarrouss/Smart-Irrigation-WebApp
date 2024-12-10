@@ -3,14 +3,18 @@ import { getAuth, signOut, updatePassword } from '@firebase/auth';
 import md5 from 'md5';
 import './UserProfile.css';
 import { FaEdit, FaSun, FaMoon, FaSignOutAlt } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+
+
 
 const UserProfile = ({ setShowProfile }) => {
   const [newPassword, setNewPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword] = useState(false);
   const [isEditingPassword, setIsEditingPassword] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const auth = getAuth();
 
+  
   useEffect(() => {
     document.body.classList.toggle('dark-theme', isDarkTheme);
   }, [isDarkTheme]);
@@ -102,6 +106,10 @@ const UserProfile = ({ setShowProfile }) => {
       )}
     </div>
   );
+};
+
+UserProfile.propTypes = {
+  setShowProfile: PropTypes.func.isRequired, // Validate setShowProfile as a required function
 };
 
 export default UserProfile;

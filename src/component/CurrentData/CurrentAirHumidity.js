@@ -24,7 +24,7 @@ const CurrentAirHumidity = () => {
       {
         label: 'Temperature and Humidity',
         data: [temperatureData.temperature_C, temperatureData.humidity],
-        data: [18, 60],
+        // data: [18, 60],
 
         borderColor: 'rgba(3, 107, 58, 1)',
         backgroundColor: 'rgba(3, 107, 58, 0.6)',

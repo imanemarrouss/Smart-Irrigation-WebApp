@@ -60,21 +60,22 @@ const Card = () => {
       <div className="card-container">
      
     <div className="container">
-      <div className="slide">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`item ${index === 0 ? 'active' : ''}`}
-            style={{ backgroundImage: `url(${image.src})` }}
-          >
-            <div className="content">
-              <div className="name">{image.title}</div>
-              <div className="des">{image.description}</div>
-              <button>See More</button>
-            </div>
-          </div>
-        ))}
+    <div className="slide">
+      {images.map((image) => (
+    <div
+      key={image.src} // Use a unique identifier (image.src) instead of the index
+      className={`item ${image === images[0] ? 'active' : ''}`} // Ensure the first item is active
+      style={{ backgroundImage: `url(${image.src})` }}
+    >
+      <div className="content">
+        <div className="name">{image.title}</div>
+        <div className="des">{image.description}</div>
+        <button>See More</button>
       </div>
+    </div>
+  ))}
+</div>
+
       <div className="button">
         <button className="prev" onClick={prevSlide}>
           <i className="fas fa-arrow-left"></i>

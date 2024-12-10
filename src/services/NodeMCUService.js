@@ -1,7 +1,6 @@
 
 import { database } from '../config/firebaseConfig';
-import { ref, push, child,set } from 'firebase/database';
-import {  get } from 'firebase/database';
+import { ref, push, child,get } from 'firebase/database';
 
 const BASE_URL = 'http://192.168.1.30';
 
@@ -12,13 +11,6 @@ export const toggleLED = async () => {
   }
 };
 
-// export const fetchLightSensorData = async () => {
-//   const response = await fetch(`${BASE_URL}/lightSensorData`);
-//   if (!response.ok) {
-//     throw new Error('Failed to fetch light sensor data');
-//   }
-//   return await response.text();
-// };
 
 
 export const fetchLightSensorData = async () => {
@@ -40,34 +32,10 @@ export const fetchLightSensorData = async () => {
   }
 };
 
-// export const fetchLightSensorData = async () => {
-//   try {
-//     const response = await fetch('http://192.168.1.30/lightSensorData');
-//     const data = await response.text();
-//     console.log('Fetched Light Sensor Data:', data);
-//     return [data]; // Assuming the data is a single value, return it in an array
-//   } catch (error) {
-//     console.error('Error fetching light sensor data:', error);
-//     return [0]; // Return [0] in case of error to avoid breaking the app
-//   }
-// };
 
 
-// export const fetchLightSensorData = async () => {
-//   try {
-//     const response = await fetch('http://192.168.1.30/lightSensorData');
-//     const data = await response.text();
-//     console.log('Fetched Light Sensor Data:', data);
-    
-//     // Save the retrieved data to Firebase
-//     await db.ref('sensor/light').set(data);
 
-//     return [data]; // Assuming the data is a single value, return it in an array
-//   } catch (error) {
-//     console.error('Error fetching light sensor data:', error);
-//     return [0]; // Return [0] in case of error to avoid breaking the app
-//   }
-// };
+
 
 
 export const fetchHumidityTemperatureDatae= async () => {
@@ -135,13 +103,7 @@ export const activateIrrigation = async () => {
   }
 };
 
-// export const fetchHumiditySensorData = async () => {
-//   const response = await fetch(`${BASE_URL}/humiditySensorData`);
-//   if (!response.ok) {
-//     throw new Error('Failed to fetch humidity sensor data');
-//   }
-//   return await response.text();
-// };
+
 
 
 export const fetchHumiditySensorDataa = async () => {

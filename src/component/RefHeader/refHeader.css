@@ -14,12 +14,12 @@
     max-width: 800px; /* Largeur maximale du contenu */
     width: 100%; /* Permet à la div de prendre toute la largeur disponible */
     margin: 0 auto; /* Centre le contenu */
-    margin-top: 10px;
+    margin-top: 140px; /* Keep this value or the first one, not both */
+    margin-bottom: 100px;
     background: rgba(255, 255, 255, 0.363); /* Fond blanc avec opacité pour le contraste */
     outline: 10px solid rgb(9, 9, 9);
-    margin-top:140px ;
-    margin-bottom: 100px;
-  }
+}
+
   
   /* Styles du titre */
   h1 {
@@ -29,12 +29,15 @@
   
   /* Styles du paragraphe */
   p {
-    margin-top: 12px; /* Marge au-dessus du paragraphe */
-    color: #4A4A4A; /* Couleur du texte */
-    font-size: 1.125rem; /* Taille de la police du paragraphe */
-    line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
-    margin: 0 auto;
-  }
+    margin-top: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    color: #4A4A4A;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
   
   /* Styles du bouton */
   button {

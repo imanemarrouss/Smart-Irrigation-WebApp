@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyA4dj1AJToXNJRE7JBz4p5iEA-A-mUam08",
@@ -21,7 +23,7 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user] = useState(null);
   const [isLogin, setIsLogin] = useState(true);
   const [notification, setNotification] = useState('');
   const navigate = useNavigate();
@@ -167,6 +169,10 @@ const LoginScreen = ({ navigation }) => {
       </div>
     </div>
   );
+};
+
+LoginScreen.propTypes = {
+  navigation: PropTypes.object.isRequired, // Adjust the type based on your navigation structure
 };
 
 export default LoginScreen;

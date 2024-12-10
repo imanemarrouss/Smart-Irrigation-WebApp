@@ -16,7 +16,7 @@ import './SensorDataHistory.css'; // Import the CSS file
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
 
 const SensorDataHistory = () => {
-  const [humidityData, setHumidityData] = useState([]);
+  const [ setHumidityData] = useState([]);
   const [lightData, setLightData] = useState([]);
   const [soilHumidityData, setSoilHumidityData] = useState([]);
   const [loading, setLoading] = useState(true);

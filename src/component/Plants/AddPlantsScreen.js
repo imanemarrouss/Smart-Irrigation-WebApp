@@ -102,16 +102,17 @@ const AddPlantsScreen = () => {
       );
 
       const plantMatch = response.data.results[0];
-      if (plantMatch && plantMatch.species) {
-        const species = plantMatch.species;
-        setPlantScientificName(species.scientificNameWithoutAuthor || '');
-        setPlantFamily(species.family.scientificName || '');
-        setPlantGenus(species.genus.scientificName || '');
-        setIsIdentified(true);
-        setAlertMessage('');
-      } else {
-        setAlertMessage('Identification failed. Unable to identify the plant.');
-      }
+      const species = plantMatch?.species;
+if (species) {
+  setPlantScientificName(species.scientificNameWithoutAuthor || '');
+  setPlantFamily(species.family?.scientificName || '');
+  setPlantGenus(species.genus?.scientificName || '');
+  setIsIdentified(true);
+  setAlertMessage('');
+} else {
+  setAlertMessage('Identification failed. Unable to identify the plant.');
+}
+
     } catch (error) {
       console.error('Error identifying plant:', error);
       setAlertMessage('An error occurred while identifying the plant.');

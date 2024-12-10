@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Use React Router for navigation
 import { getDatabase, ref, onValue } from 'firebase/database'; // Import Firebase
 import './HomeScreenPlants.css'; // Import CSS for styling
@@ -69,15 +69,16 @@ const HomeScreenPlants = () => {
 
   // Render each plant item
   const renderPlantItem = (plant) => (
-    <div
+    <a
+      href={`/plant-detail-screen/${plant.id}`} // Use href for navigation
       className="plant-item"
-      onClick={() => navigate(`/plant-detail-screen/${plant.id}`, { state: { plant } })} // Pass plant data
       key={plant.id}
     >
       <img src={plant.image} alt={plant.name} className="plant-image" />
       <h3 className="plant-name">{plant.name}</h3>
-    </div>
+    </a>
   );
+  
 
   return (
     <div className="homescreencontainer">
@@ -93,8 +94,9 @@ const HomeScreenPlants = () => {
         </div>
       )}
       <button className="add-button" onClick={() => navigate('/add-plants-screen')}>
-           <img src="src/components/Plants/add-item.png" />
-      </button>
+  <img src="src/components/Plants/add-item.png" alt="Add new plant" />
+</button>
+
     </div>
   );
 };

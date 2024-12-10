@@ -69,13 +69,14 @@ const PlantDetailScreen = () => {
   return (
     <div className="container-edit">
       <div className="image-section-edit">
-        <img
-          src={plant.image || plant.firebaseUrl}
-          alt={`Image de ${plant.name}`}
-          className="plant-image-edit"
-          onError={() => console.log("Erreur de chargement de l'image")}
-        />
-      </div>
+  <img
+    src={plant.image || plant.firebaseUrl}
+    alt={plant.name}  // Removed "image de" since it's redundant
+    className="plant-image-edit"
+    onError={() => console.log("Erreur de chargement de l'image")}
+  />
+</div>
+
       <div className="details-container-edit">
         {renderDetailItem('Nom', editedPlant.name, 'name')}
         {renderDetailItem('État', editedPlant.state, 'state')}

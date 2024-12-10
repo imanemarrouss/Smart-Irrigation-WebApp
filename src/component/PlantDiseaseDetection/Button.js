@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
+
+
 
 const Button = ({ children }) => {
   // Accept children as a prop
@@ -10,6 +14,10 @@ const Button = ({ children }) => {
       </button>
     </StyledWrapper>
   );
+};
+
+Button.propTypes = {
+    children: PropTypes.node.isRequired, // Validate 'children' as a required React node
 };
 
 const StyledWrapper = styled.div`

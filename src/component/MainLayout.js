@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';  // Import PropTypes
 import SideBar from '../component/SideBar';
 import UserProfile from '../component/Login/UserProfile';
 import { Outlet } from 'react-router-dom';
@@ -20,6 +21,14 @@ const MainLayout = ({ showProfile, setShowProfile, handleShowProfile, handleRetu
       </div>
     </div>
   );
+};
+
+// Define the expected types for the props
+MainLayout.propTypes = {
+  showProfile: PropTypes.bool.isRequired,
+  setShowProfile: PropTypes.func.isRequired,
+  handleShowProfile: PropTypes.func.isRequired,
+  handleReturnToPreviousPage: PropTypes.func.isRequired
 };
 
 export default MainLayout;
