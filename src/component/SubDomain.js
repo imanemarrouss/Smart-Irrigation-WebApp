@@ -4,7 +4,9 @@ import Footer from './Footer'; // Import Footer
 import AskQuestion from './Rag/AskQuestion';
 import './SubDomain.css'; // External CSS for better card styling
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import pestControlImage from '../assets/pestcontrol.png';
+import smartIrrigationImage from '../assets/smartirrigation.png';
+import soilHealthImage from '../assets/soilhealth.png';
 const SubDomain = () => {
     const [showChatbot, setShowChatbot] = useState(false);
     const [selectedDomain, setSelectedDomain] = useState('');
@@ -41,33 +43,50 @@ const SubDomain = () => {
         <div style={styles.homeContainer}>
             <Navbar />
             
+
             <h1 style={styles.h1}>Our Special Domains</h1>
             <div className="subdomain-container">
-                
+              
                 <div className="card" onClick={() => handleCardClick('Irrigation')}>
-                    <div className="card-image"></div>
-                    <h2 className="domain">Irrigation</h2>
-                    <p className="description">
-                        Learn more about irrigation techniques, water management, and smart irrigation solutions.
-                    </p>
-                </div>
+    <div
+        className="card-image"
+        style={{
+            backgroundImage: `url(${smartIrrigationImage})`,
+        }}
+    ></div>
+    <h2 className="domain">Irrigation</h2>
+    <p className="description">
+        Learn more about irrigation techniques, water management, and smart irrigation solutions.
+    </p>
+</div>
 
-                <div className="card" onClick={() => handleCardClick('Soil Health')}>
-                    <div className="card-image"></div>
-                    <h2 className="domain">Soil Health</h2>
-                    <p className="description">
-                        Explore soil health management, fertility, and practices to enhance crop growth.
-                    </p>
-                </div>
+<div className="card" onClick={() => handleCardClick('Soil Health')}>
+    <div
+        className="card-image"
+        style={{
+            backgroundImage: `url(${soilHealthImage})`,
+        }}
+    ></div>
+    <h2 className="domain">Soil Health</h2>
+    <p className="description">
+        Explore soil health management, fertility, and practices to enhance crop growth.
+    </p>
+</div>
 
-                {/* Add the third card */}
                 <div className="card" onClick={() => handleCardClick('Pest Control')}>
-                    <div className="card-image"></div>
-                    <h2 className="domain">Pest Control</h2>
-                    <p className="description">
-                        Understand pest control techniques and sustainable solutions to protect your crops.
-                    </p>
-                </div>
+    <div
+        className="card-image"
+        style={{
+            backgroundImage: `url(${pestControlImage})`
+        }}
+    ></div>
+    <h2 className="domain">Pest Control</h2>
+    <p className="description">
+        Understand pest control techniques and sustainable solutions to protect your crops.
+    </p>
+</div>
+
+
 
                 {/* Chatbot Modal */}
                 {showChatbot && (

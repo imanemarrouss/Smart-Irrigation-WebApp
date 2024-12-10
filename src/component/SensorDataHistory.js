@@ -77,10 +77,10 @@ const SensorDataHistory = () => {
 
   return (
     <div className="container">
-      <div className="chart-container">
+      {/* <div className="chart-container">
         <h2>Humidity Sensor Data</h2>
         <Line className="line-chart" data={prepareChartData(humidityData, 'Humidity')} options={{ responsive: true }} />
-      </div>
+      </div> */}
 
       <div className="chart-container">
         <h2>Light Sensor Data</h2>

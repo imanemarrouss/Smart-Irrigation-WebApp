@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Sidebar.css';
+import './SideBar.css';
 import { FaUsers, FaMoneyBill, FaCalendarAlt, FaCog, FaUser, FaHistory } from 'react-icons/fa';
 import { getAuth } from '@firebase/auth';
 import md5 from 'md5';
@@ -19,9 +19,9 @@ const SideBar = ({ setShowProfile, showProfile, handleShowProfile }) => {
   const navItems = [
     { icon: <FaUser />, label: 'Account', onClick: () => handleShowProfile(window.location.pathname) },
     { icon: <FaUsers />, label: 'Contacts' },
-    { icon: <FaMoneyBill />, label: 'Products' , onClick:() => navigate('/current-data')},
+    { icon: <FaMoneyBill />, label: 'Current Data' , onClick:() => navigate('/current-data')},
     { icon: <FaCalendarAlt />, label: 'Calendar' },
-    { icon: <FaCog />, label: 'Settings' },
+    { icon: <FaCog />, label: 'Detect Disease' , onClick:() => navigate('/detect')},
     { icon: <FaHistory />, label: 'History of Irrigation', onClick: () => navigate('/history') }, // New History item
   ];
 

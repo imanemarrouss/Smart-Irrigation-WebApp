@@ -107,10 +107,13 @@ import NotFound from '../component/NotFound';
 import SensorDataHistory from '../component/SensorDataHistory';
 import MainLayout from '../component/MainLayout';
 import CurrentDataDashboard from '../component/CurrentData/CurrentDataDashboard';
+import Form from '../component/PlantDiseaseDetection/Form';
+import DiseaseDetection from '../component/PlantDiseaseDetection/DiseaseDetection';
+
 // Wrapper for components that need useNavigate
 const RouterWrapper = () => {
-  const [showProfile, setShowProfile] = useState(false);  // State to control profile visibility
-  const [lastPage, setLastPage] = useState('/home-screen-plants');  // Track last visited page
+  const [showProfile, setShowProfile] = useState(false); // State to control profile visibility
+  const [lastPage, setLastPage] = useState('/home-screen-plants'); // Track last visited page
   const navigate = useNavigate();
 
   // Toggle UserProfile visibility
@@ -121,7 +124,7 @@ const RouterWrapper = () => {
   // Return to the last visited page
   const handleReturnToPreviousPage = () => {
     setShowProfile(false);
-    navigate(lastPage);  // Navigate back to the last page
+    navigate(lastPage); // Navigate back to the last page
   };
 
   return (
@@ -144,20 +147,22 @@ const RouterWrapper = () => {
           handleReturnToPreviousPage={handleReturnToPreviousPage}
         />
       }>
-        <Route index element={<HomeScreenPlants />} />
+        {/* <Route index element={<HomeScreenPlants />} /> */}
         <Route path="/history" element={<SensorDataHistory />} />
-        <Route path='current-data' element={<CurrentDataDashboard/>}/>
+        <Route path="/current-data" element={<CurrentDataDashboard />} />
         <Route path="/home-screen-plants" element={<HomeScreenPlants />} />
         <Route path="/plant-detail-screen/:id" element={<PlantDetailScreen />} />
         <Route path="/add-plants-screen" element={<AddPlantsScreen />} />
+        {/* <Route path="/detect" element={<Form />} /> */}
+        <Route path="/detect" element={<DiseaseDetection />} />
         <Route path="/edit-plants-screen/:plantId" element={<EditPlantsScreen />} />
       </Route>
 
-      {/* User Profile route */}
+      User Profile
       <Route path="/user-profile" element={
-        <UserProfile 
-          setShowProfile={setShowProfile} 
-          handleReturnToPreviousPage={handleReturnToPreviousPage} 
+        <UserProfile
+          setShowProfile={setShowProfile}
+          handleReturnToPreviousPage={handleReturnToPreviousPage}
         />
       } />
     </Routes>
