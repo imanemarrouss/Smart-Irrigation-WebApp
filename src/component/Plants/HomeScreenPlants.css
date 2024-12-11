@@ -36,7 +36,7 @@
 
 /* Message styling */
 .message {
-    font-family: 'OFL Sorts Mill Goudy TT';
+    font-family: 'OFL Sorts Mill Goudy TT',sans-serif;
     font-weight: 500;
     font-size: 36px; /* Ajusté pour une meilleure visibilité */
     line-height: 36px;

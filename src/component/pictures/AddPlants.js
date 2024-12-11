@@ -8,17 +8,17 @@ import { ref, uploadBytes } from 'firebase/storage';
 
 const AddPlants = () => {
   const [plantTitle, setPlantTitle] = useState('');
-  const [hasCameraPermission, setHasCameraPermission] = useState(null);
-  const [hasGalleryPermission, setHasGalleryPermission] = useState(false);
+  // const [hasCameraPermission, setHasCameraPermission] = useState(null);
+  // const [hasGalleryPermission, setHasGalleryPermission] = useState(false);
   const [camera, setCamera] = useState(null);
   const [capturedImage, setCapturedImage] = useState(null);
-  const [uploading, setUploading] = useState(false);
+  const [ setUploading] = useState(false);
   const [showPlantContainer, setShowPlantContainer] = useState(false);
   const [focus, setFocus] = useState({ x: 0, y: 0 });
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [zoom, setZoom] = useState(0);
-  const [showNotification, setShowNotification] = useState(false);
+  const [width ] = useState(0);
+  const [height] = useState(0);
+  // const [zoom, setZoom] = useState(0);
+  const [ setShowNotification] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [isCameraVisible, setIsCameraVisible] = useState(false);
 

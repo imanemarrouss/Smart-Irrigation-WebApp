@@ -1,7 +1,6 @@
 
 import { database } from '../config/firebaseConfig';
-import { ref, push, child,set } from 'firebase/database';
-import {  get } from 'firebase/database';
+import { ref, push, child,get } from 'firebase/database';
 
 const BASE_URL = 'http://192.168.1.30';
 
