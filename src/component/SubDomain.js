@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from './navbar'; // Import Navbar
-import Footer from './Footer'; // Import Footer
 import AskQuestion from './Rag/AskQuestion';
 import './SubDomain.css'; // External CSS for better card styling
 import '@fortawesome/fontawesome-free/css/all.min.css';

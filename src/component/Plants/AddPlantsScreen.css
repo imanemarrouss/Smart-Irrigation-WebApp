@@ -15,6 +15,8 @@ body {
     max-height: 90vh; /* Limitez la hauteur du conteneur */
     overflow-y: auto; /* Permettre le défilement */
     display: flex;
+   /* Enable vertical scrolling */
+
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center elements */
 }
