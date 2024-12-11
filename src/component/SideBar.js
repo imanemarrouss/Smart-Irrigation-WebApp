@@ -27,11 +27,22 @@ const SideBar = ({ handleShowProfile }) => {
   ];
 
   return (
+    // <div
+    //   className={`sidebar ${isHovered ? 'hovered' : ''}`}
+    //   onMouseEnter={() => setIsHovered(true)}
+    //   onMouseLeave={() => setIsHovered(false)}
+    // >
     <div
-      className={`sidebar ${isHovered ? 'hovered' : ''}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+  role="region" // Use an appropriate role, e.g., region or complementary
+  aria-label="Sidebar" // Add a label to describe the purpose
+  className={`sidebar ${isHovered ? 'hovered' : ''}`}
+  onMouseEnter={() => setIsHovered(true)}
+  onMouseLeave={() => setIsHovered(false)}
+  tabIndex={0} // Make it focusable
+  onFocus={() => setIsHovered(true)} // Handle keyboard navigation
+  onBlur={() => setIsHovered(false)}
+>
+
       <div className="user-section">
         <img
           src={getGravatarUrl(auth.currentUser?.email || '')}
@@ -46,13 +57,17 @@ const SideBar = ({ handleShowProfile }) => {
       <div className="nav-links">
         {navItems.map((item) => (
           <div
-            key={item.label}  // Use unique key (e.g., label)
-            className="nav-item"
-            role="button"  // Add role="button"
-            tabIndex="0"   // Make it focusable
-            onClick={item.onClick}
-            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') item.onClick(); }}  // Handle keyboard events (Enter/Space)
-          >
+          key={item.label}
+          className="nav-item"
+          tabIndex="0" // Make it focusable
+          onClick={item.onClick}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              item.onClick();
+            }
+          }}
+          aria-label={item.label} // Optional: Adds an accessible label
+        >
             {item.icon}
             {isHovered && <span className="nav-label">{item.label}</span>}
           </div>

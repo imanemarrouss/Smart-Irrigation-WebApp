@@ -15,10 +15,27 @@ export function AllPlants() {
   );
 
   const renderFooter = () => (
-    <div onClick={() => navigate('/add-plants')} className="image-footer">
+    // <div onClick={() => navigate('/add-plants')} className="image-footer">
+    <div
+    role="button"
+    tabIndex={0}
+    onClick={() => navigate('/add-plants')}
+    onKeyPress={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navigate('/add-plants');
+      }
+    }}
+    className="image-footer"
+  >
       <img src={require('../../assets/addPlantIcon.png')} alt="Add Plant" className="image-footer" />
     </div>
   );
+
+  
+  
+
+
+  
 
   return (
     <div className="container">
@@ -33,7 +50,17 @@ export function AllPlants() {
 function AlbumEntry({ asset, navigate }) {
   return (
     <div className="image-back">
-      <div onClick={() => navigate(`/light-control/${asset.id}`)}>
+      <div
+  role="button"
+  tabIndex={0}
+  onClick={() => navigate(`/light-control/${asset.id}`)}
+  onKeyPress={(e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      navigate(`/light-control/${asset.id}`);
+    }
+  }}
+>
+      {/* <div onClick={() => navigate(`/light-control/${asset.id}`)}> */}
         <img src={asset.uri} alt={asset.title} className="image" />
         <div className="inner-shadow" />
         <p className="text-on-image">{asset.title.split('.').slice(0, -1).join('.')}</p>

@@ -24,7 +24,7 @@ const SubDomain = () => {
           minHeight: '100vh', // S'assure que la page prend au moins toute la hauteur
           paddingBottom: '20px', // Ajout d'un padding au bas pour espacer les éléments
           justifyContent: 'space-between', // Espacement entre les éléments
-          backgroundColor:'#2d6a4f',
+          //backgroundColor:'#2d6a4f',
         },
         h1: {
             fontSize: '2.5rem',
@@ -46,7 +46,18 @@ const SubDomain = () => {
             <h1 style={styles.h1}>Our Special Domains</h1>
             <div className="subdomain-container">
               
-                <div className="card" onClick={() => handleCardClick('Irrigation')}>
+                {/* <div className="card" onClick={() => handleCardClick('Irrigation')}> */}
+                <div
+  className="card"
+  role="button"
+  tabIndex={0}
+  onClick={() => handleCardClick('Irrigation')}
+  onKeyPress={(event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      handleCardClick('Irrigation');
+    }
+  }}
+>
     <div
         className="card-image"
         style={{
@@ -59,7 +70,18 @@ const SubDomain = () => {
     </p>
 </div>
 
-<div className="card" onClick={() => handleCardClick('Soil Health')}>
+{/* <div className="card" onClick={() => handleCardClick('Soil Health')}> */}
+<div
+  className="card"
+  role="button"
+  tabIndex={0}
+  onClick={() => handleCardClick('Soil Health')}
+  onKeyPress={(event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      handleCardClick('Soil Health');
+    }
+  }}
+>
     <div
         className="card-image"
         style={{
@@ -72,7 +94,18 @@ const SubDomain = () => {
     </p>
 </div>
 
-                <div className="card" onClick={() => handleCardClick('Pest Control')}>
+                {/* <div className="card" onClick={() => handleCardClick('Pest Control')}> */}
+                <div
+  className="card"
+  role="button"
+  tabIndex={0}
+  onClick={() => handleCardClick('Pest Control')}
+  onKeyPress={(event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      handleCardClick('Pest Control');
+    }
+  }}
+>
     <div
         className="card-image"
         style={{

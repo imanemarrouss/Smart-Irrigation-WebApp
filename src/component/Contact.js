@@ -115,7 +115,7 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
       {/* Section du formulaire */}
       <div style={formContainerStyle}>
-        <form ref={form} onSubmit={sendEmail}>
+        {/* <form ref={form} onSubmit={sendEmail}>
           <label style={labelStyle}>Nom</label>
           <input type="text" name="from_name" style={inputStyle} required />
 
@@ -132,7 +132,54 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
             onMouseEnter={(e) => (e.target.style.backgroundColor = '#388e3c')}
             onMouseLeave={(e) => (e.target.style.backgroundColor = '#66bb6a')}
           />
-        </form>
+        </form> */}
+
+
+<form ref={form} onSubmit={sendEmail}>
+  {/* Label for Name */}
+  <label htmlFor="from_name" style={labelStyle}>
+    Nom
+  </label>
+  <input
+    type="text"
+    id="from_name" // Add an id matching the htmlFor attribute in the label
+    name="from_name"
+    style={inputStyle}
+    required
+  />
+
+  {/* Label for Email */}
+  <label htmlFor="email" style={labelStyle}>
+    Email
+  </label>
+  <input
+    type="email"
+    id="email" // Add an id matching the htmlFor attribute in the label
+    name="name"
+    style={inputStyle}
+    required
+  />
+
+  {/* Label for Message */}
+  <label htmlFor="message" style={labelStyle}>
+    Message
+  </label>
+  <textarea
+    id="message" // Add an id matching the htmlFor attribute in the label
+    name="message"
+    style={textAreaStyle}
+    required
+  />
+
+  <input
+    type="submit"
+    value="Envoyer"
+    style={submitButtonStyle}
+    onMouseEnter={(e) => (e.target.style.backgroundColor = '#388e3c')}
+    onMouseLeave={(e) => (e.target.style.backgroundColor = '#66bb6a')}
+  />
+</form>
+
 
         {/* Bouton de retour à l'accueil */}
         <button
