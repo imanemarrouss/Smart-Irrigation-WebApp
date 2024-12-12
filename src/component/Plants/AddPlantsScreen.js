@@ -163,7 +163,7 @@ if (species) {
         {image ? (
           <img src={URL.createObjectURL(image)} alt="Selected" className="image" />
         ) : (
-          <p className="image-text">Drag and drop an image here or click to upload</p>
+          <p className="image-text">Drag and drop an image here or click to upload "JPEG" or "PNG"</p>
         )}
       </div>
       <div className="button-container">

@@ -67,17 +67,28 @@ const HomeScreenPlants = () => {
     });
   };
 
-  // Render each plant item
+  // const renderPlantItem = (plant) => (
+  //   <a
+  //     href={`/plant-detail-screen/${plant.id}`} // Use href for navigation
+  //     className="plant-item"
+  //     key={plant.id}
+  //   >
+  //     <img src={plant.image} alt={plant.name} className="plant-image" />
+  //     <h3 className="plant-name">{plant.name}</h3>
+  //   </a>
+  // );
+
   const renderPlantItem = (plant) => (
-    <a
-      href={`/plant-detail-screen/${plant.id}`} // Use href for navigation
+    <div
       className="plant-item"
       key={plant.id}
+      onClick={() => navigate(`/plant-detail-screen/${plant.id}`, { state: { plant } })}
     >
       <img src={plant.image} alt={plant.name} className="plant-image" />
       <h3 className="plant-name">{plant.name}</h3>
-    </a>
+    </div>
   );
+  
   
 
   return (
