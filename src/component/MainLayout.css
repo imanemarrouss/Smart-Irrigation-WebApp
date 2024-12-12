@@ -1,4 +1,4 @@
-/* The overlay to dim the background */
+The overlay to dim the background
 .user-profile-overlay {
     position: fixed;
     top: 0;
@@ -23,3 +23,5 @@
     position: relative;
     margin-top: 50px; /* Add space from the top of the page */
 }
+
+

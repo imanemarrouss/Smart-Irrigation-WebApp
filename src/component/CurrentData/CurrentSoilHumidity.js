@@ -38,7 +38,7 @@ const CurrentSoilHumidity = () => {
           datasets: [
             {
               label: "Humidity",
-              data: [50 / 100], // Adjust to your data scaling
+              data: [humidity / 100], // Adjust to your data scaling
               backgroundColor: 'rgba(26, 255, 146, 0.6)',
               borderColor: 'rgba(26, 255, 146, 1)',
               borderWidth: 2,

@@ -1,0 +1,83 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+a:hover {
+  color: #0000ff; /* #0ab4ff */
+  /* font-size: 1.1rem;
+}
+.menu-anchor:hover {
+  background-color: #82a894 !important;
+  font-weight: bolder;
+}
+
+.menu-label {
+  font-size: 13px;
+}
+
+button {
+  right: 20px;
+}
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  opacity: 0.15;
+}
+a,
+.fpTHfu {
+  background-color: #48755c !important;
+} */ 
+/* Set the background color of the sidebar */
+.app {
+    background-color: #345e47; /* Dark color for the sidebar */
+    color: rgb(35, 109, 63); /* Set text color to white */
+  }
+  
+  /* Change the background color of the sidebar when collapsed */
+  .app.collapsed {
+    background-color: #508f58; /* Lighter color when collapsed */
+  }
+  
+  /* Customize the menu item */
+  .pro-sidebar .pro-menu-item {
+    color: #87bd93; /* Light text color for menu items */
+  }
+  
+  .pro-sidebar .pro-menu-item:hover {
+    background-color: #638865; /* Highlight color when hovered */
+  }
+  
+  .pro-sidebar .pro-menu-item .pro-menu-item-content {
+    color: rgb(83, 122, 102); /* Menu item content color */
+  }
+  
+  /* Avatar and user name styles */
+  .app .user-section {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .app .user-section img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .app .user-section span {
+    color: rgb(138, 177, 134);
+    font-weight: bold;
+  }
+  
+  /* Style for collapsed menu items */
+  .app .pro-menu-item.collapsed {
+    text-align: center;
+  }
+  
+
+
