@@ -3,20 +3,11 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { app, database, storage } from '../../config/firebaseConfig';
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyA4dj1AJToXNJRE7JBz4p5iEA-A-mUam08",
-  authDomain: "smart-garden-v1-571d1.firebaseapp.com",
-  projectId: "smart-garden-v1-571d1",
-  storageBucket: "smart-garden-v1-571d1.appspot.com",
-  messagingSenderId: "990416347868",
-  appId: "1:990416347868:web:fe908db1d91c2c72a28a19",
-  measurementId: "G-3LZ0PFYG77"
-};
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const LoginScreen = ({ navigation }) => {
@@ -171,8 +162,5 @@ const LoginScreen = ({ navigation }) => {
   );
 };
 
-LoginScreen.propTypes = {
-  navigation: PropTypes.object.isRequired, // Adjust the type based on your navigation structure
-};
 
 export default LoginScreen;

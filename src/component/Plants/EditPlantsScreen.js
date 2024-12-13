@@ -5,6 +5,8 @@ import { getDatabase, ref as dbRef, remove, get } from 'firebase/database'; // I
 import './EditPlantsScreen.css'; // Import CSS for styles
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { getAuth } from 'firebase/auth';
+import { database } from '../../config/firebaseConfig';
 
 const EditPlantsScreen = () => {
   const navigate = useNavigate();
@@ -49,25 +51,66 @@ const EditPlantsScreen = () => {
     }
   };
 
+  // const performDelete = async () => {
+  //   if (window.confirm('Êtes-vous sûr de vouloir supprimer cette plante ?')) {
+  //     try {
+  //       console.log(`Attempting to delete plant with ID: ${plantId}`);
+
+  //       const db = getDatabase();
+  //       const plantRef = dbRef(db, `plants/${plantId}`); // Adjust the path as necessary
+
+  //       // Check if the plant exists
+  //       const snapshot = await get(plantRef);
+  //       if (!snapshot.exists()) {
+  //         alert('Cette plante n\'existe pas dans la base de données.');
+  //         return;
+  //       }
+
+  //       // Remove the plant from the database
+  //       await remove(plantRef);
+  //       alert('Plante supprimée avec succès !');
+
+  //       // Redirect to home
+  //       navigate('/home-screen-plants');
+  //     } catch (error) {
+  //       console.error('Error deleting plant:', error);
+  //       alert('Impossible de supprimer la plante : ' + error.message);
+  //     }
+  //   }
+  // };
+
+
+
   const performDelete = async () => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer cette plante ?')) {
       try {
         console.log(`Attempting to delete plant with ID: ${plantId}`);
-
-        const db = getDatabase();
-        const plantRef = dbRef(db, `plants/${plantId}`); // Adjust the path as necessary
-
+      
+        // Access the current user ID from Firebase Authentication
+        const auth = getAuth();
+        const user = auth.currentUser;
+      
+        if (!user) {
+          alert('Utilisateur non connecté. Veuillez vous connecter pour supprimer une plante.');
+          return;
+        }
+      
+        const userId = user.uid; // Get the current user's ID
+      
+        // Use the database reference correctly from the config
+        const plantRef = dbRef(database, `plants/${userId}/${plantId}`); // Ensure this is correct
+      
         // Check if the plant exists
         const snapshot = await get(plantRef);
         if (!snapshot.exists()) {
           alert('Cette plante n\'existe pas dans la base de données.');
           return;
         }
-
+      
         // Remove the plant from the database
         await remove(plantRef);
         alert('Plante supprimée avec succès !');
-
+      
         // Redirect to home
         navigate('/home-screen-plants');
       } catch (error) {
@@ -76,6 +119,8 @@ const EditPlantsScreen = () => {
       }
     }
   };
+  
+
 
   const handlePickImage = async (event) => {
     const file = event.target.files[0];
