@@ -120,6 +120,8 @@ import { useNavigate } from 'react-router-dom';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { getAuth } from 'firebase/auth'; // Import Firebase Auth
 import './HomeScreenPlants.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const HomeScreenPlants = () => {
   const [plants, setPlants] = useState([]);
@@ -223,8 +225,8 @@ const HomeScreenPlants = () => {
         </div>
       )}
       <button className="add-button" onClick={() => navigate('/add-plants-screen')}>
-        <img src="src/components/Plants/add-item.png" alt="Add new plant" />
-      </button>
+  <FontAwesomeIcon icon={faPlus} size="2x" />
+</button>
     </div>
   );
 };

@@ -72,6 +72,26 @@ const PlantDetailScreen = () => {
     }
   };
   
+  const renderIrrigationState = () => (
+    <div className="detail-item-edit">
+      <span className="detail-label-edit">État de l'irrigation:</span>
+      <span className="detail-value-edit">
+        {plant.isIrrigated ? 'Irrigated' : 'Not Irrigated'}
+      </span>
+      {isEditing && (
+        <select
+          value={editedPlant.isIrrigated ? 'true' : 'false'}
+          onChange={(e) =>
+            setEditedPlant({ ...editedPlant, isIrrigated: e.target.value === 'true' })
+          }
+          className="detail-select-edit"
+        >
+          <option value="true">Irriguée</option>
+          <option value="false">Non irriguée</option>
+        </select>
+      )}
+    </div>
+  );
 
   const handleSave = () => {
     // Logique pour sauvegarder les modifications dans la base de données
@@ -94,6 +114,8 @@ const PlantDetailScreen = () => {
       <div className="details-container-edit">
         {renderDetailItem('Nom', editedPlant.name, 'name')}
         {renderDetailItem('État', editedPlant.state, 'state')}
+        {renderIrrigationState()}
+
         {renderDetailItem('Nom scientifique', editedPlant.scientificName, 'scientificName')}
         {renderDetailItem('Famille', editedPlant.family, 'family')}
         {renderDetailItem('Genre', editedPlant.genus, 'genus')}
