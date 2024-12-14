@@ -8,7 +8,7 @@
     padding: 20px;
     margin: 0;
     background-size: cover;
-    background-color: rgba(76, 175, 80, 0.36);
+    background-color: #e0f3e7;
     overflow-y: auto; /* Ajout du défilement vertical */
 
 }
@@ -79,7 +79,7 @@
     flex-direction: column;
     align-items: center;
     width: 300px; /* Maximum width */
-    background: #ffffff;
+    background: #a9dfa9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -95,7 +95,7 @@
 img.plant-image {
    
     object-fit: cover; /* Ajuste l'image à l'intérieur du cadre */
-    border: 4mm ridge #4caf4fb7;
+    border: 4mm ridge #4fdd56b7;
 }
 /* Plant name styling */
 h3.plant-name {

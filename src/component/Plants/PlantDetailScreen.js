@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { getDatabase, ref as dbRef, remove, get } from 'firebase/database';
 import './PlantDetailScreen.css';
+import { getAuth } from "firebase/auth";
 
 const PlantDetailScreen = () => {
   const location = useLocation();
@@ -45,15 +46,27 @@ const PlantDetailScreen = () => {
   const handleDelete = async () => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer cette plante ?')) {
       try {
+        const auth = getAuth();
+        const user = auth.currentUser;
+  
+        if (!user) {
+          alert('Utilisateur non connecté. Veuillez vous connecter pour supprimer une plante.');
+          return;
+        }
+  
+        const userId = user.uid; // Get the current user's ID
+  
+        // Correct reference path for user-specific plants
         const db = getDatabase();
-        const plantRef = dbRef(db, `plants/${plant.id}`);
-
+        const plantRef = dbRef(db, `plants/${userId}/${plant.id}`);
+  
         const snapshot = await get(plantRef);
         if (!snapshot.exists()) {
           alert('Cette plante n\'existe pas dans la base de données.');
           return;
         }
-
+  
+        // Remove the plant from the database
         await remove(plantRef);
         alert('Plante supprimée avec succès !');
         navigate('/home-screen-plants');
@@ -63,6 +76,27 @@ const PlantDetailScreen = () => {
       }
     }
   };
+  
+  const renderIrrigationState = () => (
+    <div className="detail-item-edit">
+      <span className="detail-label-edit">État de l'irrigation:</span>
+      <span className="detail-value-edit">
+        {plant.isIrrigated ? 'Irrigated' : 'Not Irrigated'}
+      </span>
+      {isEditing && (
+        <select
+          value={editedPlant.isIrrigated ? 'true' : 'false'}
+          onChange={(e) =>
+            setEditedPlant({ ...editedPlant, isIrrigated: e.target.value === 'true' })
+          }
+          className="detail-select-edit"
+        >
+          <option value="true">Irriguée</option>
+          <option value="false">Non irriguée</option>
+        </select>
+      )}
+    </div>
+  );
 
   const handleSave = () => {
     // Logique pour sauvegarder les modifications dans la base de données
@@ -85,6 +119,8 @@ const PlantDetailScreen = () => {
       <div className="details-container-edit">
         {renderDetailItem('Nom', editedPlant.name, 'name')}
         {renderDetailItem('État', editedPlant.state, 'state')}
+        {renderIrrigationState()}
+
         {renderDetailItem('Nom scientifique', editedPlant.scientificName, 'scientificName')}
         {renderDetailItem('Famille', editedPlant.family, 'family')}
         {renderDetailItem('Genre', editedPlant.genus, 'genus')}

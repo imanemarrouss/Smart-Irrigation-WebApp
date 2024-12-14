@@ -6,22 +6,16 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref as dbRef, set } from 'firebase/database';
 import './AddPlantsScreen.css';
 import { v4 as uuidv4 } from 'uuid';
+import { database,storage } from '../../config/firebaseConfig';
+import { getAuth } from "firebase/auth";
 
-// Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyA4dj1AJToXNJRE7JBz4p5iEA-A-mUam08",
-  authDomain: "smart-garden-v1-571d1.firebaseapp.com",
-  projectId: "smart-garden-v1-571d1",
-  storageBucket: "smart-garden-v1-571d1.appspot.com",
-  messagingSenderId: "990416347868",
-  appId: "1:990416347868:web:fe908db1d91c2c72a28a19",
-  measurementId: "G-3LZ0PFYG77"
-};
+
+
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
-const db = getDatabase(app);
+//const app = initializeApp(firebaseConfig);
+//const storage = getStorage(app);
+//const db = getDatabase(app);
 
 const AddPlantsScreen = () => {
   const [image, setImage] = useState(null);
@@ -36,7 +30,7 @@ const AddPlantsScreen = () => {
   const [alertMessage, setAlertMessage] = useState('');
   const navigate = useNavigate();
   const { plantId } = useParams();
-
+   
   useEffect(() => {
     if (plantId) {
       loadPlantDetails();
@@ -92,7 +86,7 @@ const AddPlantsScreen = () => {
       form.append('images', image);
 
       const response = await axios.post(
-        'https://my-api.plantnet.org/v2/identify/all?api-key=2b10bw6ri0n8ysN3bRG4wQm2O',
+        'https://my-api.plantnet.org/v2/identify/all?lang=en&api-key=2b10G6n8vVMgI7ZMxde4DB4W',
         form,
         {
           headers: {
@@ -129,6 +123,15 @@ if (species) {
     
     try {
       setIsSaving(true);
+      const auth = getAuth();
+      const user = auth.currentUser;
+      if (!user) {
+        setAlertMessage("User not authenticated.");
+        navigate('/login');
+        return;
+      }
+      const userId = user.uid;
+  
       const firebaseUrl = await uploadToFirebase(image);
       
       const plantData = {
@@ -143,7 +146,7 @@ if (species) {
         },
       };
       
-      await set(dbRef(db, 'plants/' + plantData.id), plantData);
+      await set(dbRef(database, `plants/${userId}/${plantData.id}`), plantData);
       
       setAlertMessage(`La plante "${plantName.trim()}" a été sauvegardée avec succès !`);
       navigate('/');
@@ -154,6 +157,7 @@ if (species) {
       setIsSaving(false);
     }
   };
+  
 
   return (
     <div className="add-plant-container">
@@ -232,3 +236,192 @@ if (species) {
 };
 
 export default AddPlantsScreen;
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { useNavigate, useParams } from 'react-router-dom';
+// import axios from 'axios';
+// import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+// import { initializeApp } from 'firebase/app';
+// import { getDatabase, ref as dbRef, set } from 'firebase/database';
+// import './AddPlantsScreen.css';
+// import { v4 as uuidv4 } from 'uuid';
+// import { database, storage } from '../../config/firebaseConfig';
+// import { getAuth } from "firebase/auth";
+
+// // Initialize Firebase
+// // const app = initializeApp(firebaseConfig);
+// // const storage = getStorage(app);
+// // const db = getDatabase(app);
+
+// const AddPlantsScreen = () => {
+//   const [image, setImage] = useState(null);
+//   const [plantName, setPlantName] = useState('');
+//   const [plantState, setPlantState] = useState('');
+//   const [plantFamily, setPlantFamily] = useState('');
+//   const [plantGenus, setPlantGenus] = useState('');
+//   const [plantScientificName, setPlantScientificName] = useState('');
+//   const [isSaving, setIsSaving] = useState(false);
+//   const [alertMessage, setAlertMessage] = useState('');
+//   const navigate = useNavigate();
+//   const { plantId } = useParams();
+
+//   useEffect(() => {
+//     if (plantId) {
+//       loadPlantDetails();
+//     }
+//   }, [plantId]);
+
+//   const loadPlantDetails = async () => {
+//     try {
+//       const plantData = localStorage.getItem(plantId);
+//       if (plantData) {
+//         const { name, localUri, state } = JSON.parse(plantData);
+//         setPlantName(name);
+//         setImage(localUri);
+//         setPlantState(state || '');
+//       }
+//     } catch (error) {
+//       console.error('Error loading plant details:', error);
+//       alert('Error loading plant details.');
+//     }
+//   };
+
+//   const pickImage = async () => {
+//     const input = document.createElement('input');
+//     input.type = 'file';
+//     input.accept = 'image/*';
+//     input.onchange = (event) => {
+//       const file = event.target.files[0];
+//       if (file) {
+//         setImage(file);
+//         setAlertMessage('');
+//       }
+//     };
+//     input.click();
+//   };
+
+//   const uploadToFirebase = async (file) => {
+//     const storageReference = storageRef(storage, `plants/${file.name}`);
+//     await uploadBytes(storageReference, file);
+//     return await getDownloadURL(storageReference);
+//   };
+
+//   const savePlant = async () => {
+//     if (!image || !plantName.trim()) {
+//       setAlertMessage('Please select an image, enter a plant name, and other details before saving.');
+//       return;
+//     }
+
+//     try {
+//       setIsSaving(true);
+//       const auth = getAuth();
+//       const user = auth.currentUser;
+//       if (!user) {
+//         setAlertMessage("User not authenticated.");
+//         navigate('/login');
+//         return;
+//       }
+//       const userId = user.uid;
+
+//       const firebaseUrl = await uploadToFirebase(image);
+
+//       const plantData = {
+//         id: uuidv4(),
+//         name: plantName.trim(),
+//         firebaseUrl: firebaseUrl,
+//         state: plantState,
+//         identification: {
+//           scientificName: plantScientificName || '',
+//           family: plantFamily || '',
+//           genus: plantGenus || ''
+//         },
+//       };
+
+//       await set(dbRef(database, `plants/${userId}/${plantData.id}`), plantData);
+
+//       setAlertMessage(`The plant "${plantName.trim()}" has been saved successfully!`);
+//       navigate('/home-screen-plants');
+//     } catch (error) {
+//       console.error('Error saving plant:', error);
+//       setAlertMessage('An error occurred while saving the plant: ' + error.message);
+//     } finally {
+//       setIsSaving(false);
+//     }
+//   };
+
+//   return (
+//     <div className="add-plant-container">
+//       <h1 className="title">{plantId ? 'Plant Details' : 'Add a New Plant'}</h1>
+//       {alertMessage && <p className="alert">{alertMessage}</p>}
+//       <div className="image-container">
+//         {image ? (
+//           <img src={URL.createObjectURL(image)} alt="Selected" className="image" />
+//         ) : (
+//           <p className="image-text">Drag and drop an image here or click to upload "JPEG" or "PNG"</p>
+//         )}
+//       </div>
+//       <div className="button-container">
+//         <button onClick={pickImage} className="button">Choose from Gallery</button>
+//       </div>
+//       <div className="result-container">
+//         <div className="result-content">
+//           <div className="result-image">
+//             {image && <img src={URL.createObjectURL(image)} alt="Plant" className="result-image-display" />}
+//           </div>
+//           <div className="result-info">
+//             <input
+//               type="text"
+//               className="input"
+//               onChange={(e) => setPlantName(e.target.value)}
+//               value={plantName}
+//               placeholder="Name"
+//             />
+//             <input
+//               type="text"
+//               className="input"
+//               onChange={(e) => setPlantScientificName(e.target.value)}
+//               value={plantScientificName}
+//               placeholder="Scientific Name"
+//             />
+//             <input
+//               type="text"
+//               className="input"
+//               onChange={(e) => setPlantFamily(e.target.value)}
+//               value={plantFamily}
+//               placeholder="Family"
+//             />
+//             <input
+//               type="text"
+//               className="input"
+//               onChange={(e) => setPlantGenus(e.target.value)}
+//               value={plantGenus}
+//               placeholder="Genus"
+//             />
+//             <input
+//               type="text"
+//               className="input"
+//               onChange={(e) => setPlantState(e.target.value)}
+//               value={plantState}
+//               placeholder="State"
+//             />
+//             <button
+//               onClick={savePlant}
+//               className="button_save"
+//               disabled={isSaving}
+//             >
+//               Save Plant
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default AddPlantsScreen;
