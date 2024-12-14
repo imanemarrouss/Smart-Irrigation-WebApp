@@ -27,12 +27,17 @@ const PlantDetailScreen = () => {
       {isEditing ? (
         <input
           type="text"
+          id={`input-${field}`}
+          data-testid={`input-${field}`}
           value={value}
           onChange={(e) => setEditedPlant({ ...editedPlant, [field]: e.target.value })}
           className="detail-input-edit"
         />
       ) : (
-        <span className="detail-value-edit">{value || 'Non spécifié'}</span>
+        <span 
+        id={`value-${field}`} // ID unique pour chaque valeur
+        data-testid={`value-${field}`} // data-testid pour les tests
+        className="detail-value-edit">{value || 'Non spécifié'}</span>
       )}
     </div>
   );
@@ -66,17 +71,17 @@ const PlantDetailScreen = () => {
     // Vous pouvez ajouter ici la logique pour mettre à jour dans Firebase si nécessaire
   };
 
+
   return (
     <div className="container-edit">
       <div className="image-section-edit">
-  <img
-    src={plant.image || plant.firebaseUrl}
-    alt={plant.name}  // Removed "image de" since it's redundant
-    className="plant-image-edit"
-    onError={() => console.log("Erreur de chargement de l'image")}
-  />
-</div>
-
+        <img
+          src={plant.image || plant.firebaseUrl}
+          alt={`Image de ${plant.name}`}
+          className="plant-image-edit"
+          onError={() => console.log("Erreur de chargement de l'image")}
+        />
+      </div>
       <div className="details-container-edit">
         {renderDetailItem('Nom', editedPlant.name, 'name')}
         {renderDetailItem('État', editedPlant.state, 'state')}
@@ -87,19 +92,19 @@ const PlantDetailScreen = () => {
         <div className="action-buttons-edit">
           {isEditing ? (
             <>
-              <button className="action-button-edit" onClick={handleSave}>
+              <button className="action-button-edit" data-testid="save-button" onClick={handleSave}>
                 Sauvegarder
               </button>
-              <button className="action-button-edit" onClick={() => setIsEditing(false)}>
-                Annuler
+              <button className="action-button-edit" data-testid="cancel-button" onClick={() => setIsEditing(false)}>
+                Annuler 
               </button>
             </>
           ) : (
             <>
-              <button className="action-button-edit" onClick={() => setIsEditing(true)}>
+              <button className="action-button-edit" data-testid="edit-button"  onClick={() => setIsEditing(true)}>
                 <FontAwesomeIcon icon={faEdit} className="icon-edit" />
               </button>
-              <button className="action-button-edit" onClick={handleDelete}>
+              <button className="action-button-edit" data-testid="delete-button" onClick={handleDelete}>
                 <FontAwesomeIcon icon={faTrash} className="icon-delete" />
               </button>
             </>
