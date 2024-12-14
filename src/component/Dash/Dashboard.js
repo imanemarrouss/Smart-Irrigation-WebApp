@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { RiHome4Line, RiTeamLine, RiCalendar2Line, RiFolder2Line, RiUserFollowLine, RiPlantLine, RiStackLine, RiUserUnfollowLine } from "react-icons/ri";
+import { RiHome4Line,  RiFolder2Line, RiPlantLine, RiStackLine,  } from "react-icons/ri";
 import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 import { Sidebar, SubMenu, Menu, MenuItem } from "react-pro-sidebar";
 import { useNavigate } from "react-router-dom";

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { app, database, storage } from '../../config/firebaseConfig';
+import { app } from '../../config/firebaseConfig';
 
 
 
