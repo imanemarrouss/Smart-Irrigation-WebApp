@@ -97,7 +97,10 @@ describe('DiseaseDetection Component', () => {
 });
 */
 
-  /*test('successfully detects disease with API response', async () => {
+  
+});
+
+/*test('successfully detects disease with API response', async () => {
     const mockResponse = {
       ok: true,
       json: () => Promise.resolve({ result: 'Healthy Plant' }),
@@ -123,5 +126,4 @@ describe('DiseaseDetection Component', () => {
     await waitFor(() => {
       expect(screen.getByTestId('result')).toHaveTextContent('Healthy Plant');
     });
-  });*/
-});
+ });*/

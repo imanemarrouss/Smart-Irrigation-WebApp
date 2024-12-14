@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import CurrentAirHumidity from './CurrentAirHumidity';
 import { fetchHumidityTemperatureData } from '../../services/NodeMCUService';
 
-// Mock the react-chartjs-2 Line component
+
 jest.mock('react-chartjs-2', () => ({
   Line: jest.fn(() => null)
 }));

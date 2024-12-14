@@ -28,3 +28,5 @@ fetchMock.enableMocks();
 // Mock toutes les requêtes fetch
 fetchMock.mockResponse(JSON.stringify({ message: 'Mock fetch response' }));
 
+//fetchMock.mockResponse(JSON.stringify({ message: 'Mock fetch response' }));
+//fetchMock.mockResponseOnce(JSON.stringify({ message: 'Mock fetch response' }));
