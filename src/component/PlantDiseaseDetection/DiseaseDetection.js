@@ -27,7 +27,7 @@ const DiseaseDetection = () => {
 
     try {
       // Make the API call to Flask backend
-      const response = await fetch("http://localhost:5000/detect", {
+      const response = await fetch("http://localhost:3000/detect", {
         // Adjust the URL based on your Flask server setup
         method: "POST",
         body: formData,
@@ -43,11 +43,11 @@ const DiseaseDetection = () => {
   return (
     <StyledContainer>
       <div>
-        <Title  data-testid="title"  >Check Your Plant Health</Title> {/* Add a title here */}
-        <Form  handleImageChange={handleImageChange} />{" "}
+        <Title>Check Your Plant Health</Title> {/* Add a title here */}
+        <Form handleImageChange={handleImageChange} />{" "}
         {/* Pass the handler to Form */}
-        <Button children="" testId="submit-button-disease-detection" onClick={handleSubmit}/> {/* Trigger the form submission */}
-        {result && <Result data-testid="result" >{result}</Result>}{" "}
+        <Button onClick={handleSubmit} /> {/* Trigger the form submission */}
+        {result && <Result>{result}</Result>}{" "}
         {/* Display the result if available */}
       </div>
     </StyledContainer>
