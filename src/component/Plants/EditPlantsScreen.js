@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { getDatabase, ref as dbRef, remove, get } from 'firebase/database'; // Import Firebase Database functions
+import {  ref as dbRef, remove, get } from 'firebase/database'; // Import Firebase Database functions
 import './EditPlantsScreen.css'; // Import CSS for styles
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -50,34 +50,6 @@ const EditPlantsScreen = () => {
       alert('Impossible de mettre à jour la plante : ' + error.message);
     }
   };
-
-  // const performDelete = async () => {
-  //   if (window.confirm('Êtes-vous sûr de vouloir supprimer cette plante ?')) {
-  //     try {
-  //       console.log(`Attempting to delete plant with ID: ${plantId}`);
-
-  //       const db = getDatabase();
-  //       const plantRef = dbRef(db, `plants/${plantId}`); // Adjust the path as necessary
-
-  //       // Check if the plant exists
-  //       const snapshot = await get(plantRef);
-  //       if (!snapshot.exists()) {
-  //         alert('Cette plante n\'existe pas dans la base de données.');
-  //         return;
-  //       }
-
-  //       // Remove the plant from the database
-  //       await remove(plantRef);
-  //       alert('Plante supprimée avec succès !');
-
-  //       // Redirect to home
-  //       navigate('/home-screen-plants');
-  //     } catch (error) {
-  //       console.error('Error deleting plant:', error);
-  //       alert('Impossible de supprimer la plante : ' + error.message);
-  //     }
-  //   }
-  // };
 
 
 
