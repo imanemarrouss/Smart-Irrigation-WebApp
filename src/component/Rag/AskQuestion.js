@@ -63,7 +63,7 @@ const AskQuestion = () => {
             {error && <p className="error-message">{error}</p>}
 
             {/* Show loading indicator */}
-            {loading && <p className="loading-message">Loading...</p>}
+            {loading && <p className="loading-message" data-testid="loading-indicator" >Loading...</p>}
 
             {/* Display the response */}
             {!loading && response && (

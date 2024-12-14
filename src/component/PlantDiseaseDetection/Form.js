@@ -61,7 +61,7 @@ const Form = () => {
       <div className="background" />
       <div className="content">
         <h1 className="title">Check Your Plant's Health</h1>
-        <form onSubmit={handleSubmit}>
+        <form data-testid="form" onSubmit={handleSubmit}>
   <label htmlFor="file" className="custum-file-upload" aria-label="Click to upload image">
     <div className="icon">
       <svg

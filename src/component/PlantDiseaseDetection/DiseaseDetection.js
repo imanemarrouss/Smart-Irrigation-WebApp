@@ -43,11 +43,11 @@ const DiseaseDetection = () => {
   return (
     <StyledContainer>
       <div>
-        <Title>Check Your Plant Health</Title> {/* Add a title here */}
-        <Form handleImageChange={handleImageChange} />{" "}
+        <Title  data-testid="title"  >Check Your Plant Health</Title> {/* Add a title here */}
+        <Form  handleImageChange={handleImageChange} />{" "}
         {/* Pass the handler to Form */}
-        <Button onClick={handleSubmit} /> {/* Trigger the form submission */}
-        {result && <Result>{result}</Result>}{" "}
+        <Button children="" testId="submit-button-disease-detection" onClick={handleSubmit}/> {/* Trigger the form submission */}
+        {result && <Result data-testid="result" >{result}</Result>}{" "}
         {/* Display the result if available */}
       </div>
     </StyledContainer>

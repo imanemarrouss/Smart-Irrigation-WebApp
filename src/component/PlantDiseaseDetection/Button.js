@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 
 
 
-const Button = ({ children }) => {
+const Button = ({ children, testId }) => {
   // Accept children as a prop
   return (
     <StyledWrapper>
-      <button className="button2" style={{ marginLeft: "38px" }}>
+      <button data-testid={testId} className="button2" style={{ marginLeft: "38px" }}>
         {children}
       </button>
     </StyledWrapper>
