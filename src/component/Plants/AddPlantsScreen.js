@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref as dbRef, set } from 'firebase/database';
+import {  ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+//import { initializeApp } from 'firebase/app';
+import {  ref as dbRef, set } from 'firebase/database';
 import './AddPlantsScreen.css';
 import { v4 as uuidv4 } from 'uuid';
 import { database,storage } from '../../config/firebaseConfig';

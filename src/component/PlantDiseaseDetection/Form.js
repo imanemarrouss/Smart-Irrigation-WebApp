@@ -11,9 +11,17 @@ const Form = () => {
   const [advice, setAdvice] = useState(""); // State to hold advice based on prediction
 
   // Cleanup function for preview URL
-  useEffect(() => {
+  /*useEffect(() => {
     return () => {
       if (preview) {
+        URL.revokeObjectURL(preview); // Cleanup the object URL
+      }
+    };
+  }, [preview]);*/
+
+  useEffect(() => {
+    return () => {
+      if (preview && typeof URL.revokeObjectURL === 'function') {
         URL.revokeObjectURL(preview); // Cleanup the object URL
       }
     };
@@ -75,7 +83,7 @@ const Form = () => {
       <div className="background" />
       <div className="content">
         <h1 className="title">Check Your Plant's Health</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid="form" >
           <label htmlFor="file" className="custum-file-upload">
             <div className="icon">
               <svg

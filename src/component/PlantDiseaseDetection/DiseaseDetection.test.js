@@ -7,6 +7,8 @@ global.fetch = jest.fn();
 
 describe('DiseaseDetection Component', () => {
   beforeEach(() => {
+    // Mock the URL.createObjectURL function
+    global.URL.createObjectURL = jest.fn(() => 'http://mocked-url.com/mock.png');
     fetch.mockClear();
   });
 
@@ -26,6 +28,7 @@ describe('DiseaseDetection Component', () => {
 
     expect(fileInput.files[0]).toBe(file);
     expect(fileInput.files[0].name).toBe('test.png');
+    
   });
 
 
