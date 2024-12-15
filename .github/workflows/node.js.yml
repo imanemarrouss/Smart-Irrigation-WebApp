@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "loubnaTest" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "loubnaTest" ]
 env:
     CI: false
 jobs:
