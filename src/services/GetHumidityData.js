@@ -33,3 +33,8 @@ const sendPushNotification = async () => {
 };
 
 sendPushNotification();
+
+module.exports = {
+  sendPushNotification,
+  fetchHumidityData
+};

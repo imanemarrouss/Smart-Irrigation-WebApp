@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import fetchMock from 'jest-fetch-mock';
+import 'jest-canvas-mock';
 
 global.TextEncoder = require('util').TextEncoder;
 global.TextDecoder = require('util').TextDecoder;

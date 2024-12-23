@@ -18,7 +18,9 @@
     "axios-mock-adapter": "^2.1.0",
     "chart.js": "^4.4.5",
     "emailjs-com": "^3.2.0",
+    "expo-server-sdk": "^3.13.0",
     "firebase": "^10.14.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest-fetch-mock": "^3.0.3",
     "md5": "^2.3.0",
     "prop-types": "^15.8.1",
@@ -62,6 +64,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/react": "^16.1.0",
     "autoprefixer": "^10.4.20",
+    "jest-canvas-mock": "^2.5.2",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"
   }

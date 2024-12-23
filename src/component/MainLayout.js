@@ -40,7 +40,7 @@ import Dashboard from './Dash/Dashboard'; // Sidebar Component
 
 const MainLayout = ({ showProfile, setShowProfile, handleShowProfile, handleReturnToPreviousPage }) => {
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
+    <div data-testid="main-layout" style={{ display: 'flex', height: '100vh' }}>
       {/* Sidebar (Dashboard) */}
       <Dashboard />
       

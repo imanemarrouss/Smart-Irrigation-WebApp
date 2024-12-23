@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DiseaseDetection Component matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-blHHSb coFXrE"
+  >
+    <div>
+      <h1
+        class="sc-gtLWhw hRBIIe"
+      >
+        Check Your Plant Health
+      </h1>
+       
+      <input
+        data-testid="file-input"
+        type="file"
+      />
+       
+      <button>
+        Submit
+      </button>
+       
+       
+    </div>
+  </div>
+</div>
+`;

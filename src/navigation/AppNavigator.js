@@ -133,18 +133,19 @@ const RouterWrapper = () => {
   return (
     <Routes>
       {/* Public routes */}
-      <Route path="/" element={<HomeScreen />} />
-      <Route path="/home" element={<HomeScreen />} />
-      <Route path="/referentiel" element={<Reference />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="*" element={<NotFound />} />
-      <Route path="/login" element={<LoginScreen />} />
+      <Route path="/" element={<HomeScreen data-testid="home-screen" />} />
+      <Route path="/home" element={<HomeScreen data-testid="home-screen" />} />
+      <Route path="/referentiel" element={<Reference data-testid="reference" />} />
+      <Route path="/about" element={<About data-testid="about" />} />
+      <Route path="/contact" element={<Contact data-testid="contact" />} />
+      <Route path="*" element={<NotFound data-testid="not-found" />} />
+      <Route path="/login" element={<LoginScreen data-testid="login-screen" />} />
 
       {/* Protected Routes with Sidebar Layout */}
       <Route 
         element={
           <MainLayout
+            data-testid="main-layout"
             showProfile={showProfile}
             setShowProfile={setShowProfile}
             handleShowProfile={handleShowProfile}
