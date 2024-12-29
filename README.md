@@ -2,12 +2,14 @@
 
 ## Overview
 
-The **Smart Irrigation Web App** enables users to remotely monitor and control garden irrigation and lighting. It integrates sensor data and utilizes a pretrained model to provide plant-specific care suggestions, real-time notifications, and actionable insights for smart gardening.
+The **Smart Irrigation Web App** enables users to remotely monitor and control garden irrigation and lighting. It integrates sensor data and utilizes a pretrained model to provide plant-specific care suggestions, and actionable insights for smart gardening. Additionally, the app offers an AI-powered question-answering system for farmers and a plant disease detection tool to help identify plant issues and suggest appropriate actions.
 
 ---
 
 ## Features
 
+-AI-powered question-answering system **RAG** for farmers to ask about plant care, irrigation, and common gardening issues.
+-Plant disease detection using image analysis and AI to diagnose plant diseases and recommend treatments.
 - Remote control of irrigation and lighting.
 - Real-time sensor data monitoring (moisture, temperature, light, and humidity).
 - Notifications for optimal watering and lighting schedules.
