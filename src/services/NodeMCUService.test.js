@@ -39,7 +39,7 @@ describe('NodeMCU Service', () => {
     it('should successfully toggle LED', async () => {
       global.fetch.mockResolvedValueOnce({ ok: true });
       await toggleLED();
-      expect(fetch).toHaveBeenCalledWith('http://192.168.1.30/toggle');
+      expect(fetch).toHaveBeenCalledWith('https://192.168.1.30/toggle');
     });
 
     it('should throw error when toggle fails', async () => {
@@ -60,7 +60,7 @@ describe('NodeMCU Service', () => {
 
       expect(result).toEqual([mockData]);
       expect(push).toHaveBeenCalled();
-      expect(fetch).toHaveBeenCalledWith('http://192.168.1.30/lightSensorData');
+      expect(fetch).toHaveBeenCalledWith('https://192.168.1.30/lightSensorData');
     });
 
     it('should handle errors gracefully', async () => {
@@ -109,7 +109,7 @@ describe('NodeMCU Service', () => {
 
       expect(result).toBe(75.5);
       expect(push).toHaveBeenCalled();
-      expect(fetch).toHaveBeenCalledWith('http://192.168.1.30/humiditySensorData', {
+      expect(fetch).toHaveBeenCalledWith('https://192.168.1.30/humiditySensorData', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -195,7 +195,7 @@ describe('NodeMCU Service', () => {
     it('should successfully activate irrigation', async () => {
       global.fetch.mockResolvedValueOnce({ ok: true });
       await activateIrrigation();
-      expect(fetch).toHaveBeenCalledWith('http://192.168.1.30/activateIrrigation');
+      expect(fetch).toHaveBeenCalledWith('https://192.168.1.30/activateIrrigation');
     });
 
     it('should throw error when activation fails', async () => {
